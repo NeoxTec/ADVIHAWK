@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".Login">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ADVIHAWK2" />
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
 
     <TextView
         android:id="@+id/textView2"

@@ -5,34 +5,31 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/session_start"
+            android:title="Iniciar sesion" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/session_end"
+            android:title="Cerrar sesión" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
-    </group>
+            android:id="@+id/search"
+            android:icon="@drawable/ic_search_black"
+            android:title="Buscar" />
 
-    <item android:title="Communicate">
+    </group>
+    <item android:title="Opciones">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/adviser_list"
+                android:icon="@drawable/ic_insert_drive_file"
+                android:title="Lista de asesorías" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/adviser_taken"
+                android:icon="@drawable/ic_move_to_inbox"
+                android:title="Asesorías tomadas" />
+            <item
+                android:id="@+id/list_advisors"
+                android:icon="@drawable/ic_people_black"
+                android:title="Lista asesores" />
         </menu>
     </item>
-
 </menu>
