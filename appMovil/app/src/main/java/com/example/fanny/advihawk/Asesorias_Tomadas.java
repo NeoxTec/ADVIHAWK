@@ -3,11 +3,11 @@ package com.example.fanny.advihawk;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class perfilasesor_blog extends AppCompatActivity {
+public class Asesorias_Tomadas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perfilasesor_blog);
+        setContentView(R.layout.activity_asesorias__tomadas);
     }
 }

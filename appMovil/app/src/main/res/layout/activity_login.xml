@@ -4,116 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login">
+    tools:context=".Login">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="270dp"
-        android:layout_height="225dp"
+        android:layout_width="269dp"
+        android:layout_height="230dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ADVIHAWK2" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="329dp"
-        android:layout_height="347dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="@color/design_default_color_primary_dark" />
+        app:srcCompat="@mipmap/ic_launcher_foreground" />
 
-    <TextView
-        android:id="@+id/id_usuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="315dp"
+        android:layout_height="212dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="232dp"
         android:layout_marginEnd="8dp"
-        android:text="Usuario"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
+        android:background="@color/ic_launcher_background"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.289"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/usuario"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="Usuario"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColorLink="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contraseña"
+            android:textColor="@color/design_default_color_primary_dark"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textColorLink="@color/colorPrimaryDark" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="314dp"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="280dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_marginBottom="64dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="224dp"
-        android:text="Contraseña"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="101dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="Iniciar Sesión "
+            android:textColor="@color/ic_launcher_background"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="160dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/ic_launcher_background"
+            android:text="Registrarme"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+    </LinearLayout>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="136dp"
-        android:layout_height="30dp"
+        android:id="@+id/button6"
+        android:layout_width="315dp"
+        android:layout_height="46dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="104dp"
-        android:background="@color/colorPrimaryDark"
-        android:text="Iniciar Sesiòn "
-        android:textColor="@android:color/background_light"
+        android:layout_marginBottom="8dp"
+        android:background="#F66363"
+        android:text="Iniciar sesion con google"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.223"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="110dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="104dp"
-        android:background="@android:color/holo_red_dark"
-        android:text="Cancelar"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>
