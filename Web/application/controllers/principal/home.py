@@ -4,7 +4,7 @@ import config as config
 """
     Clase para poder renderizar y mostrar le contenido del index
 """
-class Login:
+class Home:
     def __init__(self):
         pass
 
