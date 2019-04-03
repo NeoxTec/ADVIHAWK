@@ -1,6 +1,6 @@
 import web
 '''
-Parametros de configuracion para conectarse a una base de datos MySQL 
+Parametros de configuracion para conectarse a una base de datos MySQL
 o MariaDB
 '''
 db = web.database(
@@ -9,6 +9,5 @@ db = web.database(
     db = 'advihawk', # nombre de la base de datos
     user = 'advihawk', # usuario de la BD
     pw = 'advihawk.2019', # password del usuario
-    port = 3306 # puerto de mariadb
+    port = 3307 # puerto de mariadb
 )
-

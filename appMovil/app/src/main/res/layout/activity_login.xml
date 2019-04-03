@@ -100,6 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/ic_launcher_background"
+            android:onClick="registrar"
             android:text="Registrarme"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />

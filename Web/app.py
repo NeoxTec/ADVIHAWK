@@ -2,7 +2,7 @@ import web
 
 urls=('/login','application.controllers.login.login.Login')
 
-render = web.template.render('application/views/errores/', base = 'master2')
+render = web.template.render('application/views/principal/', base = 'master')
 
 if __name__ == "__main__": # metodo principal, doble guion = private
     app = web.application(urls, globals())
