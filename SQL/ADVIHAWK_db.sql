@@ -6,16 +6,10 @@ create table Registro(
     pass varchar(25) not null,
     nombre varchar(50) not null,
     apellidos varchar(50) not null,
-    carrera enum('Contaduria','Criminalistica','Desarrollo e inovacion empresarial','Diseño digital','Energias renovables','Enfermeria','Industrial','Mecatronica','Nanotecnologia','Terapia Fisica','Tecnologias de la informacion y comunicacion','Salud reproductiva') not null,
+    carrera enum('Contaduria','Criminalistica','Desarrollo e inovacion empresarial','Diseño digital','Energias renovables','Enfermeria','Industrial','Mecatronica','Nanotecnologia','Terapia Fisica','Tecnologias de la informacion y comunicacion','Salud reproductiva'),
     foto blob null,
-    tipo enum('Regular','Asesor','Profesor') not null
-);
-
-Create table Regular(
-    id_al int(8) unsigned auto_increment primary key,
-    correo varchar(50) not null,
-    grado varchar(20) not null,
-    constraint fk_estandar foreign key (correo) references Registro(correo)
+    tipo enum('Regular','Asesor','Profesor'),
+    grado enum('Inmersion','1er. Cuatrimestre','2do. Cuatrimestre','3er. Cuatrimestre','4to. Cuatrimestre','5to. Cuatrimestre','6to. Cuatrimestre','7mo. Cuatrimestre','8vo. Cuatrimestre','9no. Cuatrimestre','10mo. Cuatrimestre','11vo. Cuatrimestre','Profesor') not null
 );
 
 Create table Asesor(
@@ -28,13 +22,7 @@ Create table Asesor(
     constraint fk_asesor foreign key (correo) references Registro(correo)
 );
 
-create table Profesor(
-    id_prof int(8) unsigned auto_increment primary key,
-    correo varchar(50) not null,
-    constraint fk_profesor foreign key (correo) references Registro(correo)
-);
-
-create table Asesorias(
+create table asesorias(
     num_as int(10) unsigned auto_increment primary key,
     dia date not null,
     hora time not null,
@@ -57,9 +45,9 @@ create table Validacion(
     num_val int(6) unsigned auto_increment primary key,
     Tipo enum('Si','No') not null,
     ase int(8) unsigned not null,
-    prof int(8) unsigned not null,
+    prof varchar(50) not null,
     constraint fk_ase foreign key (ase) references Asesor(id_as),
-    constraint fk_prof foreign key (prof) references Profesor(id_prof)
+    constraint fk_prof foreign key (prof) references Registro(correo)
 );
 
 create table Certificaciones(
