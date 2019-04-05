@@ -6,4 +6,36 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="carrera">
+        <item>Carrera</item>
+        <item>Contaduria</item>
+        <item>Criminalistica</item>
+        <item>Desarrollo e inovacion empresarial</item>
+        <item>Diseño digital</item>
+        <item>Energias renovables</item>
+        <item>Enfermeria</item>
+        <item>Industrial</item>
+        <item>Mecatronica</item>
+        <item>Nanotecnologia</item>
+        <item>Terapia Fisica</item>
+        <item>Tecnologias de la informacion y comunicacion</item>
+        <item>Salud reproductiva</item>
+    </string-array>
+    <string-array name="grado">
+        <item>Inmersion</item>
+        <item>1er. Cuatrimestre</item>
+        <item>2do. Cuatrimestre</item>
+        <item>3er. Cuatrimestre</item>
+        <item>4to. Cuatrimestre</item>
+        <item>5to. Cuatrimestre</item>
+        <item>6to. Cuatrimestre</item>
+        <item>7mo. Cuatrimestre</item>
+        <item>8vo. Cuatrimestre</item>
+        <item>9no. Cuatrimestre</item>
+        <item>10mo. Cuatrimestre</item>
+        <item>11vo. Cuatrimestre</item>
+        <item>Profesor</item>
+    </string-array>
+    <string name="listavacia">Sin Datos</string>
 </resources>

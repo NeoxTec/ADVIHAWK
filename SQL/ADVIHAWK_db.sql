@@ -12,6 +12,7 @@ create table Registro(
     grado enum('Inmersion','1er. Cuatrimestre','2do. Cuatrimestre','3er. Cuatrimestre','4to. Cuatrimestre','5to. Cuatrimestre','6to. Cuatrimestre','7mo. Cuatrimestre','8vo. Cuatrimestre','9no. Cuatrimestre','10mo. Cuatrimestre','11vo. Cuatrimestre','Profesor') not null
 );
 
+insert into registro(correo,pass,nombre,apellidos,carrera,tipo,grado) values('1717110635@utectulancingo.edu.mx','171711','Mario Alberto','Nieto Lopez',11,2,6),('1717110611@utetulancingo.edu.mx','171711','Diego','Bolanos Pardo',11,2,6),('1717110652@utectulancingo.edu.mx','171711','Estefania','Garcia Resendiz',11,1,6);
 Create table Asesor(
     id_as int(8) unsigned auto_increment primary key,
     correo varchar(50) not null,
