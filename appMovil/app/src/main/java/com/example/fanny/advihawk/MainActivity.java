@@ -87,6 +87,9 @@ public class MainActivity extends AppCompatActivity
         } else if(id == R.id.adviser_taken){
             Intent intent = new Intent(getApplicationContext(),Asesorias_Tomadas.class);
             startActivity(intent);
+        }else if(id == R.id.list_advisors){
+            Intent intent = new Intent(getApplicationContext(), Lista_asesores.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
