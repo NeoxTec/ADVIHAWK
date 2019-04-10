@@ -66,6 +66,7 @@ public class ActivityDetalles_Asesor extends AppCompatActivity {
     private void parseInformation(String jsonResult){
         JSONArray jsonArray = null;
         String num_as;
+        String grado;
         String validado;
         String correo;
         String habilidades;
@@ -80,13 +81,15 @@ public class ActivityDetalles_Asesor extends AppCompatActivity {
                 //Se obtiene cada uno de los datos cliente del webservice
                 num_as = jsonObject.getString("id_as");
                 correo = jsonObject.getString("correo");
-                validado = jsonObject.getString("validadoo");
+                grado = jsonObject.getString("grado");
+                validado = jsonObject.getString("validado");
                 habilidades = jsonObject.getString("habilidades");
 
                 //Se muestran los datos del cliente en su respectivo EditText
                 et_num_as.setText(num_as);
                 et_correo.setText(correo);
                 et_validado.setText(validado);
+                et_grado.setText(grado);
                 et_habilidades.setText(habilidades);
 
             }catch (JSONException e){

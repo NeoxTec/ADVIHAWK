@@ -12,6 +12,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Lista_asesores"></activity>
         <activity android:name=".Registro" />
+        <activity android:name=".ActivityDetalles_Asesor"/>
         <activity android:name=".Asesorias_Solicitadas" />
         <activity android:name=".Asesorias_Tomadas" />
         <activity android:name=".Asesorias_Impartidas" />
