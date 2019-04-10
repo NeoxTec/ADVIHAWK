@@ -76,7 +76,8 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(),Login.class);
             startActivity(intent);
         } else if (id == R.id.session_end) {
-
+            Intent intent = new Intent(getApplicationContext(),Solicitar_Asesoria.class);
+            startActivity(intent);
         }else if (id == R.id.profile) {
             Intent intent = new Intent(getApplicationContext(),Asesor_Perfil.class);
             startActivity(intent);

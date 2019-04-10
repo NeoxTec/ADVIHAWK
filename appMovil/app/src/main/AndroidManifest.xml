@@ -16,7 +16,6 @@
         <activity android:name=".Asesorias_Tomadas" />
         <activity android:name=".Asesorias_Impartidas" />
         <activity android:name=".Solicitar_Asesoria" />
-        <activity android:name=".Certificados" />
         <activity android:name=".Informacion" />
         <activity android:name=".Asesor_Perfil" />
         <activity android:name=".Perfil_Asesor" />

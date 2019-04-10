@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityDetalles_Asesor">
+
+    <TextView
+        android:id="@+id/det_asesor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="25"
+        android:paddingVertical="5dp"
+        android:text="Datos del asesor"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="555dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <TextView
+                    android:id="@+id/tv_id_asesor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12sp"
+                    android:text="id del asesor"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/id_asesor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="id_asesor"
+                    android:inputType="number"
+                    android:textColor="@color/design_default_color_primary_dark"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <TextView
+                    android:id="@+id/tv_validado_asesor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12sp"
+                    android:text="Asesor validado"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/validado_asesor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="validado asesor"
+                    android:inputType="text"
+                    android:textColor="@color/design_default_color_primary_dark"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <TextView
+                    android:id="@+id/tv_correo_asesor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12sp"
+                    android:text="Correo"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/correo_asesor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="Correo de asesor"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/design_default_color_primary_dark"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <TextView
+                    android:id="@+id/tv_grado_asesor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12sp"
+                    android:text="Grado que cursa"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/grado_asesor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="Grado de asesor"
+                    android:inputType="text"
+                    android:textColor="@color/design_default_color_primary_dark"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="5dp">
+
+                <TextView
+                    android:id="@+id/tv_habilidades_asesor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12sp"
+                    android:text="Habilidades del asesor"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp">
+
+                <EditText
+                    android:id="@+id/habilidades_asesor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:hint="Grado de asesor"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/design_default_color_primary_dark"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:id="@+id/button9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#31A764"
+        android:drawableLeft="@drawable/asesoria"
+        android:text="Asesoria"
+        android:textAlignment="center"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints" />
+</LinearLayout>
+</LinearLayout>

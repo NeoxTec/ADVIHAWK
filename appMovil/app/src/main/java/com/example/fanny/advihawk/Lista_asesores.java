@@ -1,11 +1,15 @@
 package com.example.fanny.advihawk;
 
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,6 +24,7 @@ public class Lista_asesores extends AppCompatActivity {
     private String getAllAsesoresURL ="http://advi01.herokuapp.com/api_asesor?user_hash=12345&action=get";
     private ListView lista_asesores;
     private ArrayAdapter adapter;
+    public static final String ASESOR = "1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +32,26 @@ public class Lista_asesores extends AppCompatActivity {
         setContentView(R.layout.activity_lista_asesores);
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
 
-        lista_asesores = (ListView) findViewById(R.id.lista_asesores);
-        adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1);
+        lista_asesores = findViewById(R.id.lista_asesores);
+        adapter = new ArrayAdapter(this, R.layout.asesor_item);
         lista_asesores.setAdapter(adapter);
         webREST(getAllAsesoresURL);
+
+        lista_asesores.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.e("ITEM", lista_asesores.getItemAtPosition(position).toString());
+                String datos_asesor[] =
+                        lista_asesores.getItemAtPosition(position).toString().split(":");
+                String id_asesor = datos_asesor[0];
+                Log.e("ASESOR",id_asesor);
+                Intent i = new Intent(Lista_asesores.this,ActivityDetalles_Asesor.class);
+                i.putExtra(ASESOR,id_asesor.toString());
+                startActivity(i);
+            }
+        });
     }
+
     private void webREST(String respuestaURL){
         try{
             URL url = new URL(respuestaURL);
@@ -46,7 +66,7 @@ public class Lista_asesores extends AppCompatActivity {
             bufferedReader.close();
             parseInformation(webResult);
         }catch(Exception e){
-            e.printStackTrace();
+            Log.e("Error de conexion",e.getMessage());
         }
     }
 
@@ -60,7 +80,7 @@ public class Lista_asesores extends AppCompatActivity {
         try{
             jsonArray = new JSONArray(jsonResult);
         }catch (JSONException e){
-            e.printStackTrace();
+            Log.e("Error de datos",e.getMessage());
         }
         for(int i=0;i<jsonArray.length();i++){
             try{
@@ -69,9 +89,9 @@ public class Lista_asesores extends AppCompatActivity {
                 correo = jsonObject.getString("correo");
                 validado = jsonObject.getString("validado");
                 grado = jsonObject.getString("grado");
-                adapter.add(id_as + " - " + correo +" - "+grado+" - "+ validado);
+                adapter.add(id_as + ": " + correo +" |"+grado);
             }catch (JSONException e){
-                e.printStackTrace();
+                Log.e("Error parseo",e.getMessage());
             }
         }
     }

@@ -12,14 +12,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="25"
+        android:paddingVertical="5dp"
         android:text=" Lista de asesores"
-        android:textAlignment="textStart"
+        android:textAlignment="center"
         android:textColor="@color/design_default_color_primary_dark"
         android:textSize="30sp"
         android:textStyle="bold" />
-
-    <ListView
-        android:id="@+id/lista_asesores"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="5dp">
+
+            <ListView
+                android:id="@+id/lista_asesores"
+                android:layout_width="match_parent"
+                android:layout_height="597dp"></ListView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

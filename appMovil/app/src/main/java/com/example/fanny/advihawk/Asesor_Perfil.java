@@ -13,11 +13,6 @@ public class Asesor_Perfil extends AppCompatActivity {
         setContentView(R.layout.activity_asesor_perfil);
     }
 
-    public void certificados(View view) {
-        Intent intent = new Intent(getApplicationContext(),Certificados.class);
-        startActivity(intent);
-    }
-
     public void asesoria(View view) {
         Intent intent = new Intent(getApplicationContext(),Solicitar_Asesoria.class);
         startActivity(intent);
