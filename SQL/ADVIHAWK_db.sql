@@ -1,52 +1,32 @@
 Create database ADVIHAWK;
 use ADVIHAWK;
 
-create table Registro(
-    correo varchar(50) primary key not null,
-    pass varchar(25) not null,
-    nombre varchar(50) not null,
-    apellidos varchar(50) not null,
-    carrera enum('Contaduria','Criminalistica','Desarrollo e inovacion empresarial','Diseño digital','Energias renovables','Enfermeria','Industrial','Mecatronica','Nanotecnologia','Terapia Fisica','Tecnologias de la informacion y comunicacion','Salud reproductiva'),
-    foto blob null,
-    tipo enum('Regular','Asesor','Profesor'),
-    grado enum('Inmersion','1er. Cuatrimestre','2do. Cuatrimestre','3er. Cuatrimestre','4to. Cuatrimestre','5to. Cuatrimestre','6to. Cuatrimestre','7mo. Cuatrimestre','8vo. Cuatrimestre','9no. Cuatrimestre','10mo. Cuatrimestre','11vo. Cuatrimestre','Profesor') not null
-);
+CREATE TABLE IF NOT EXISTS users(
+    user VARCHAR(70) PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    carrera ENUM('tic','dn','en','mec','nano','in','conta','enf','crimi','tf','sr','di') NOT NULL,
+    grado VARCHAR(50) NOT NULL,
+    tipo TINYINT(3) NOT NULL,
+    ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-insert into registro(correo,pass,nombre,apellidos,carrera,tipo,grado) values
-('correo1@prueba.com','1234','Peter','Parker',11,2,6),
-('correo2@prueba.com','2345','James','Logan',11,2,6),
-('correo3@prueba.com','3456','Susan','Storm',11,1,6),
-('correo4@prueba.com','4567','Natasha','Romanoff',8,2,9),
-('correo5@prueba.com','5678','Matt','Murdock',8,2,6),
-('correo6@prueba.com','6789','Scott','Summers',8,1,6),
-('correo7@prueba.com','7890','Wanda','Maximoff',8,1,2),
-('correo8@prueba.com','8901','Wade','Wilson',8, 1,2),
-('correo9@prueba.com','9012','Bruce','Banner',11,1,2),
-('correo10@prueba.com','1123','Kitty','Pride',11,1,2);
-/*
-+---------------------+------+---------+-----------+----------------------------------------------+------+---------+-------------------+
-| correo              | pass | nombre  | apellidos | carrera                                      | foto | tipo    | grado             |
-+---------------------+------+---------+-----------+----------------------------------------------+------+---------+-------------------+
-| correo10@prueba.com | 1123 | Kitty   | Pride     | Tecnologias de la informacion y comunicacion | NULL | Regular | 1er. Cuatrimestre |
-| correo1@prueba.com  | 1234 | Peter   | Parker    | Tecnologias de la informacion y comunicacion | NULL | Asesor  | 5to. Cuatrimestre |
-| correo2@prueba.com  | 2345 | James   | Logan     | Tecnologias de la informacion y comunicacion | NULL | Asesor  | 5to. Cuatrimestre |
-| correo3@prueba.com  | 3456 | Susan   | Storm     | Tecnologias de la informacion y comunicacion | NULL | Regular | 5to. Cuatrimestre |
-| correo4@prueba.com  | 4567 | Natasha | Romanoff  | Mecatronica                                  | NULL | Asesor  | 8vo. Cuatrimestre |
-| correo5@prueba.com  | 5678 | Matt    | Murdock   | Mecatronica                                  | NULL | Asesor  | 5to. Cuatrimestre |
-| correo6@prueba.com  | 6789 | Scott   | Summers   | Mecatronica                                  | NULL | Regular | 5to. Cuatrimestre |
-| correo7@prueba.com  | 7890 | Wanda   | Maximoff  | Mecatronica                                  | NULL | Regular | 1er. Cuatrimestre |
-| correo8@prueba.com  | 8901 | Wade    | Wilson    | Mecatronica                                  | NULL | Regular | 1er. Cuatrimestre |
-| correo9@prueba.com  | 9012 | Bruce   | Banner    | Tecnologias de la informacion y comunicacion | NULL | Regular | 1er. Cuatrimestre |
-+---------------------+------+---------+-----------+----------------------------------------------+------+---------+-------------------+
-*/
+INSERT INTO users(user,nombre,carrera,grado,tipo) 
+VALUES
+('dieloxes@gmail.com','Diego Bolaños Pardo','tic',5,0),
+('1717110635@gmail.com','Mario Alberto Nieto Lopez','tic',3,1);
+
+CREATE TABLE sessions(
+    session_id char(128) UNIQUE NOT NULL,
+    atime timestamp NOT NULL default current_timestamp,
+    data text
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 Create table Asesor(
     id_as int(8) unsigned auto_increment primary key,
-    correo varchar(50) not null,
+    correo varchar(70) not null,
     horario blob null,
     habilidades text(250)null,
     validado enum('Si','No') not null default('No'),
-    constraint fk_asesor foreign key (correo) references Registro(correo)
+    constraint fk_asesor foreign key (correo) references users(user)
 );
 
 insert into asesor(correo, habilidades, validado) values
@@ -92,7 +72,7 @@ create table asesorias(
     asesor int(8) unsigned not null,
     tema text(40) not null,
     constraint fk_idas foreign key (asesor) references Asesor(id_as),
-    constraint fk_asesorado foreign key (solicitante) references Registro(correo)
+    constraint fk_asesorado foreign key (solicitante) references users(user)
 );
 
 insert into asesorias(solicitante, asesor,dia,estado,hora,tema)values
@@ -181,7 +161,7 @@ create table Validacion(
     ase int(8) unsigned not null,
     prof varchar(50) not null,
     constraint fk_ase foreign key (ase) references Asesor(id_as),
-    constraint fk_prof foreign key (prof) references Registro(correo)
+    constraint fk_prof foreign key (prof) references users(user)
 );
 
 create table Certificaciones(
