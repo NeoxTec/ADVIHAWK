@@ -184,7 +184,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@color/colorPrimary"
-                    android:text="Registrarme "
+                    android:text="Registrarme"
                     android:textColor="@color/ic_launcher_background"
                     android:textSize="18sp" />
 

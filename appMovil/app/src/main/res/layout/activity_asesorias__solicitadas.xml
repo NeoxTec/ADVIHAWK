@@ -7,9 +7,4 @@
     android:orientation="vertical"
     tools:context=".Asesorias_Solicitadas">
 
-    <ListView
-        android:id="@+id/lista_asesores"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
-
 </LinearLayout>

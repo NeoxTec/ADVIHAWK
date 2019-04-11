@@ -188,6 +188,6 @@ insert into certificaciones(nombre,tipo,descripcion,id_asesor) values
 +----------+--------+-------------+----------------------------------------------+--------+-----------+
 */
 
-CREATE USER 'advihawk'@'localhost' IDENTIFIED BY 'ADVI.2019';
+CREATE USER 'advihawk'@'localhost' IDENTIFIED BY 'advihawk.2019';
 GRANT ALL PRIVILEGES ON ADVIHAWK.* TO 'advihawk'@'localhost';
 FLUSH PRIVILEGES;

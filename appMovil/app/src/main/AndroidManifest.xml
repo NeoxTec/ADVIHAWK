@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fanny.advihawk">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,12 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Lista_asesores"></activity>
         <activity android:name=".Registro" />
+        <activity android:name=".ActivityDetalles_Asesor"/>
         <activity android:name=".Asesorias_Solicitadas" />
         <activity android:name=".Asesorias_Tomadas" />
         <activity android:name=".Asesorias_Impartidas" />
         <activity android:name=".Solicitar_Asesoria" />
-        <activity android:name=".Certificados" />
         <activity android:name=".Informacion" />
         <activity android:name=".Asesor_Perfil" />
         <activity android:name=".Perfil_Asesor" />
@@ -30,5 +32,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
 </manifest>

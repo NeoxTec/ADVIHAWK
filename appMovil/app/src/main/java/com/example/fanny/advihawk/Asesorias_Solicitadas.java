@@ -1,17 +1,22 @@
 package com.example.fanny.advihawk;
 
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class Asesorias_Solicitadas extends AppCompatActivity {
-    private ListView lista_asesores;
-    private ArrayList<String>datos = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,3 +25,5 @@ public class Asesorias_Solicitadas extends AppCompatActivity {
     }
 
 }
+
+
