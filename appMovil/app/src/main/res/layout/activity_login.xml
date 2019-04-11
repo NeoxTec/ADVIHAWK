@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".Login"
+    android:background="@color/colorBack">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="269dp"
-        android:layout_height="230dp"
+        android:layout_width="290dp"
+        android:layout_height="290dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
@@ -20,10 +21,11 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="315dp"
-        android:layout_height="212dp"
+        android:layout_width="wrap_content"
+        android:layout_height="182dp"
+        android:paddingHorizontal="30dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="302dp"
         android:layout_marginEnd="8dp"
         android:background="@color/ic_launcher_background"
         android:orientation="vertical"
@@ -35,7 +37,9 @@
             android:id="@+id/usuario"
             android:layout_width="match_parent"
             android:layout_height="54dp"
-            android:text="Usuario"
+            android:layout_marginHorizontal="5dp"
+            android:text="Correo"
+            android:layout_marginTop="30dp"
             android:textColor="@color/design_default_color_primary_dark"
             android:textColorLink="@color/colorPrimary"
             android:textSize="24sp" />
@@ -44,23 +48,7 @@
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textColorLink="@color/colorPrimaryDark" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Contraseña"
-            android:textColor="@color/design_default_color_primary_dark"
-            android:textColorLink="@color/colorPrimary"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:textColorLink="@color/colorPrimaryDark" />
@@ -72,7 +60,7 @@
         android:layout_width="314dp"
         android:layout_height="49dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="64dp"
         android:orientation="horizontal"
@@ -85,7 +73,7 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="101dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
@@ -105,24 +93,4 @@
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/bt_login"
-        android:layout_width="315dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#F66363"
-        android:onClick="login"
-        android:text="Iniciar sesion con google"
-        android:textColor="@color/ic_launcher_background"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.0" />
 </android.support.constraint.ConstraintLayout>

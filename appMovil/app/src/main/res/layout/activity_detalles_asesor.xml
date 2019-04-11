@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:ems="25"
-        android:paddingVertical="5dp"
+        android:paddingVertical="30dp"
         android:text="Datos del asesor"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_primary_dark"
