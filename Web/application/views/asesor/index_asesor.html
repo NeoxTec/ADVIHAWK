@@ -1,4 +1,5 @@
-$def with(datos)
+$def with(datos,params)
+$var tipo = params['tipo']
 <br>
 <h1 class="text-center"><img src="/static/images/multiple-users-silhouette.png" height="50" width="50" margin-left="20px">  Asesores</h1>
 <br>
@@ -7,21 +8,25 @@ $def with(datos)
         <thead>
             <tr class="table-success">
                 <th scope="col"><img src="/static/images/id-card.png" width="15" height="15">  ID</th>
-                <th scope="col"><img src="/static/images/opened-email-envelope.png" height="15" width="15">  Correo</th>
+                <th scope="col"><img src="/static/images/opened-email-envelope.png" height="15" width="15">  Nombre</th>
+                <th scope="col"><img src="/static/images/user-silhouette.png" height="15" width="15">  Carrera</th>
+                <th scope="col"><img src="/static/images/user-silhouette.png" height="15" width="15">  Correo</th>
                 <th scope="col"><img src="/static/images/skills.png" width="15" height="15">  Habilidades</th>
-                <th scope="col"><img src="/static/images/graduation-hat.png" width="15" height="15">  Grado</th>
+                <th scope="col"><img src="/static/images/skills.png" width="15" height="15">  Grado</th>
             </tr>
         </thead>
         <tbody>
             $for row in datos:
                 <tr>
-                    <td><a href="/view_clients/$row.id_as">$row.id_as</a></td>
-                    <td><a href="/view_clients/$row.id_as">$row.correo</a></td>
-                    <td><a href="/view_clients/$row.id_as">$row.habilidades</a></td>
-                    <td><a href="/view_clients/$row.id_as">$row.grado</a></td>
+                    <td><a href="/perfil_asesor/$row.id_as">$row.id_as</a></td>
+                    <td><a href="/perfil_asesor/$row.id_as">$row.nombre</a></td>
+                    <td><a href="/perfil_asesor/$row.id_as">$row.correo</a></td>
+                    <td><a href="/perfil_asesor/$row.id_as">$row.carrera</a></td>
+                    <td><a href="/perfil_asesor/$row.id_as">$row.habilidades</a></td>
+                    <td><a href="/perfil_asesor/$row.id_as">$row.grado</a></td>
                 </tr>
         </tbody>
     </table>
 </section>
 <br>
-<a href="/index_asesoria"><button type="button" class="btn btn-success"><img src="/static/images/assigment.png" height="40" width="40">  Asesorias</button></a>
+<a href="/"><button type="submit" class="btn btn-danger  btn-lg btn-block">Regresar</button></a>

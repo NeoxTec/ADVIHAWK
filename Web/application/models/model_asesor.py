@@ -1,16 +1,17 @@
-import config as config # importa el archivo config
+import web
+import app 
 
-db = config.db # crea un objeto del objeto db creado en config 
+db = app.db
 
 '''
 Metodo para seleccionar todos los registros de la tabla asesor
 '''
-def select_asesor():
+def get_all_asesor():
     try:
         return db.select('asesor') # selecciona todos los registros de la tabla de asesor
     except Exception as e:
-        print "Model select_clientes Error ()",format(e.args)
-        print "Model select_clientes Message {}",format(e.message)
+        print "Model select_asesor Error ()",format(e.args)
+        print "Model select_asesor Message {}",format(e.message)
         return None
 
 '''
@@ -19,6 +20,28 @@ Metodo para seleccionar un registro que coincida con el id dado
 def select_id_as(id_as):
     try:
         return db.select('asesor', where= 'id_as = $id_as', vars=locals())[0] #selecciona el primer registro que coincida con el nombre
+    except Exception as e:
+        print "Model select_id_as Error ()",format(e.args)
+        print "Model select_id_as Message {}",format(e.message)
+        return None
+
+'''
+Metodo para seleccionar un registro que coincida con el correo dado
+'''
+def get_asesor(correo):
+    try:
+        return db.select('asesor', where= 'correo = $correo', vars=locals())[0] #selecciona el primer registro que coincida con el nombre
+    except Exception as e:
+        print "Model select_id_as Error ()",format(e.args)
+        print "Model select_id_as Message {}",format(e.message)
+        return None
+
+'''
+Metodo para seleccionar un registro que coincida con el correo dado
+'''
+def get_asesor_carrera(carrera):
+    try:
+        return db.select('asesor', where= 'carrera = $carrera', vars=locals())[0] #selecciona el primer registro que coincida con el nombre
     except Exception as e:
         print "Model select_id_as Error ()",format(e.args)
         print "Model select_id_as Message {}",format(e.message)
@@ -49,12 +72,11 @@ def delete_asesor(id_as):
 '''
 Metodo para actualizar el nombre,telefono,correo y direccion recibidos
 '''
-def update_asesor(id_as,correo,habilidades,grado): # actualiza el registro
+def update_asesor(id_as,correo,habilidades): # actualiza el registro
     try:
-            return db.update('clientes',
+            return db.update('asesor',
             correo=correo,
             habilidades=habilidades,
-            grado=grado,
             where='id_as=$id_as',
             vars=locals())
     except Exception as e:

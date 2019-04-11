@@ -1,0 +1,29 @@
+$def with(asesor,registro,params)
+<br>
+<a href="/"><button type="submit" class="btn btn-secondary btn-lg"><img src="/static/images/back.png" height="40" width="40">Regresar</button></a> <a href="/editar_asesor/$params['user']"><button type="submit" class="btn btn-secondary btn-lg" style="margin-left: 825px;"><img src="/static/images/document.png" height="40" width="40">Editar</button></a>
+<br>
+<br>
+<div class="jumbotron jumbotron-fluid">
+        <div class="container" height="30" width="30">
+          <h1 class="display-7">$registro.nombre</h1>
+          <p class="lead">Alumno de la Universidad Tecnológica de Tulancingo .</p>
+        </div>
+        <section class="text-center">
+                <img class="rounded-circle" width="140" height="140" src="$params['picture']" ><br>
+                <h1 class="text-center"> Asesor: $params['user']</h>
+        </section>
+        <br>
+      </div>
+<br>
+<br>
+<section class="container">
+    <h3 class="text-left"><img src="/static/images/id_cred.png" height="50" width="50">  ID:</h3><input type="text" class="form-control" readonly="true" value="$asesor.id_as" id="id_as" name="id_as"> 
+    <br>
+    <h3 class="text-left"><img src="/static/images/gmail.png" height="50" width="50">  Correo:</h3><input type="text" class="form-control" readonly="true" value="$params['user']" id="correo" name="correo">
+    <br>
+    <h3 class="text-left"><img src="/static/images/horario.png" height="50" width="50">  Horario:</h3><input type="text" class="form-control" readonly="true" value="$asesor.horario" id="horario" name="horario">
+    <br>
+    <h3 class="text-left"><img src="/static/images/education.png" height="50" width="50">  Habilidades:</h3><input type="text" class="form-control" readonly="true" value="$asesor.habilidades" id="habilidades" name="habilidades">
+    <br>
+    <h3 class="text-left"><img src="/static/images/degree.png" height="50" width="50">  Grado:</h3><input type="text" class="form-control"  readonly="true" value="$registro.grado" id="grado" name="grado">
+</section>

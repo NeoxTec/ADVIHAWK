@@ -1,6 +1,6 @@
-$def with(datos)
+$def with(datos,params)
 <br>
-<h1 class="text-center"><img src="/static/images/multiple-users-silhouette.png" height="50" width="50" margin-left="20px">  Asesorias</h1>
+<h1 class="text-center"><img src="/static/images/consultant.png" height="50" width="50" margin-left="20px">  Asesorias</h1>
 <br>
 <section class="table-responsive-lg">
     <table class="table table-bordered table-striped">
@@ -10,20 +10,26 @@ $def with(datos)
                 <th scope="col"><img src="/static/images/calendar.png" height="15" width="15">  Fecha</th>
                 <th scope="col"><img src="/static/images/clock.png" width="15" height="15">  Hora</th>
                 <th scope="col"><img src="/static/images/couple-of-arrows-changing-places.png" width="15" height="15">  Estado</th>
-                <th scope="col"><img src="/static/images/content.png" width="15" height="15">  Tema</th>
+                <th scope="col"><img src="/static/images/couple-of-arrows-changing-places.png" width="15" height="15">  Asesor</th>
+                <th scope="col"><img src="/static/images/content.png" width="15" height="15">  Tema y lugar</th>
+                $if params['tipo'] == 0 :
+                <th scope="col"><img src="/static/images/resume.png" width="15" height="15">Editar</th>
             </tr>
         </thead>
         <tbody>
             $for row in datos:
                 <tr>
-                    <td><a href="/view_clients/$row.num_as">$row.num_as</a></td>
-                    <td><a href="/view_clients/$row.num_as">$row.dia</a></td>
-                    <td><a href="/view_clients/$row.num_as">$row.hora</a></td>
-                    <td><a href="/view_clients/$row.num_as">$row.estado</a></td>
-                    <td><a href="/view_clients/$row.num_as">$row.tema</a></td>
+                    <td>$row.num_as</a></td>
+                    <td>$row.dia</a></td>
+                    <td>$row.hora</a></td>
+                    <td>$row.estado</a></td>
+                    <td>$row.asesor</a></td>
+                    <td>$row.tema</a></td>
+                    $if params['tipo'] == 0 :
+                    <td  width="30" height="30"><a href="/editar_asesoria/$row.num_as"><img src="/static/images/refresh.png" width="30" height="30"></a></td>
                 </tr>
         </tbody>
     </table>
 </section>
 <br>
-<a href="/index_asesoria"><button type="button" class="btn btn-success"><img src="/static/images/plus.png" height="40" width="40">  Agregar Asesoria</button></a>
+<a href="/"><button type="submit" class="btn btn-danger  btn-lg btn-block">Regresar</button></a>

@@ -1,0 +1,21 @@
+<br>
+<h1 class="text-center"><img src="/static/images/resume.png" height="50" width="50">  Solicitud de Asesoría</h1>
+<br>
+<form method="POST">
+        <section class="form-group">
+                <label for="dia"><img src="/static/images/calendar.png" height="20" width="20">  Día:</label>
+                <input type="date" class="form-control"  placeholder="Día" id="dia" name="dia" required>
+        </section>
+        <section class="form-group">
+            <label for="hora"><img src="/static/images/clock.png" height="20" width="20"> Hora:</label>
+            <input type="time" class="form-control" placeholder="Hora" id="hora" name="hora" required> 
+        </section>
+        <section class="form-group">
+                <label for="Tema"><img src="/static/images/description.png" height="20" width="20">Tema y lugar de la asesoria:</label>
+                <textarea class="form-control" placeholder="Tema" id="tema" name="tema" rows="4" required></textarea>
+        </section>
+        <br>
+        <button type="submit" class="btn btn-success btn-lg btn-block"><img src="/static/images/new-user_2.png" height="20" width="20"> Solicitar</button>
+</form>
+<br>
+<a href="/index_asesor"><button class="btn btn-danger btn-lg btn-block">Cancelar</button></a>
