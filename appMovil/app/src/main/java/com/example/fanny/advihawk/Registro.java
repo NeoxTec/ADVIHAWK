@@ -20,7 +20,6 @@ public class Registro extends AppCompatActivity {
         campoNombre = (EditText)findViewById(R.id.nombre);
         campoApe = (EditText)findViewById(R.id.apellidos);
         campoCorreo = (EditText) findViewById(R.id.correo_reg);
-        campoPass = (EditText) findViewById(R.id.pass_reg);
         campoTipo = (RadioGroup) findViewById(R.id.tipo);
         campoGrado = (Spinner) findViewById(R.id.spinner_grado);
         campoCarrera = (Spinner) findViewById(R.id.spinner);

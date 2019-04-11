@@ -6,6 +6,7 @@ import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,11 +21,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ActivityDetalles_Asesor extends AppCompatActivity {
-        EditText et_num_as;
-        EditText et_correo;
-        EditText et_grado;
-        EditText et_validado;
-        EditText et_habilidades;
+    EditText et_num_as;
+    EditText et_correo;
+    EditText et_validado;
+    EditText et_habilidades;
 
     private String webservice_url = "http://advi01.herokuapp.com/api_asesor?user_hash=12345&action=get&id_as=";
 
@@ -36,13 +36,20 @@ public class ActivityDetalles_Asesor extends AppCompatActivity {
 
         et_num_as = findViewById(R.id.id_asesor);
         et_correo = findViewById(R.id.correo_asesor);
-        et_grado = findViewById(R.id.grado_asesor);
         et_validado = findViewById(R.id.validado_asesor);
         et_habilidades = findViewById(R.id.habilidades_asesor);
+        Button solicitar = (Button) findViewById(R.id.bt_solicitar_asesoria);
+
+        solicitar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Solicitar_Asesoria.class);
+                startActivityForResult(intent,0);
+            }
+        });
 
         Intent intent = getIntent();
         String num_ase = intent.getStringExtra(Lista_asesores.ASESOR);
-        webservice_url= webservice_url+num_ase;
+        webservice_url+=num_ase;
         webServiceRest(webservice_url);
     }
 
@@ -66,7 +73,6 @@ public class ActivityDetalles_Asesor extends AppCompatActivity {
     private void parseInformation(String jsonResult){
         JSONArray jsonArray = null;
         String num_as;
-        String grado;
         String validado;
         String correo;
         String habilidades;
@@ -81,7 +87,6 @@ public class ActivityDetalles_Asesor extends AppCompatActivity {
                 //Se obtiene cada uno de los datos cliente del webservice
                 num_as = jsonObject.getString("id_as");
                 correo = jsonObject.getString("correo");
-                grado = jsonObject.getString("grado");
                 validado = jsonObject.getString("validado");
                 habilidades = jsonObject.getString("habilidades");
 
@@ -89,7 +94,6 @@ public class ActivityDetalles_Asesor extends AppCompatActivity {
                 et_num_as.setText(num_as);
                 et_correo.setText(correo);
                 et_validado.setText(validado);
-                et_grado.setText(grado);
                 et_habilidades.setText(habilidades);
 
             }catch (JSONException e){
@@ -97,9 +101,4 @@ public class ActivityDetalles_Asesor extends AppCompatActivity {
         }
     }
 }
-
-    public void Solicitar(View view) {
-        Intent intent = new Intent(getApplicationContext(),Solicitar_Asesoria.class);
-        startActivity(intent);
-    }
 }

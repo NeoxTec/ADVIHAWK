@@ -46,7 +46,7 @@ public class Lista_asesores extends AppCompatActivity {
                 String id_asesor = datos_asesor[0];
                 Log.e("ASESOR",id_asesor);
                 Intent i = new Intent(Lista_asesores.this,ActivityDetalles_Asesor.class);
-                i.putExtra(ASESOR,id_asesor.toString());
+                i.putExtra(ASESOR,id_asesor);
                 startActivity(i);
             }
         });
@@ -75,7 +75,6 @@ public class Lista_asesores extends AppCompatActivity {
         String correo;
         String id_as;
         String validado;
-        String grado;
         String habilidades;
         try{
             jsonArray = new JSONArray(jsonResult);
@@ -88,8 +87,7 @@ public class Lista_asesores extends AppCompatActivity {
                 id_as = jsonObject.getString("id_as");
                 correo = jsonObject.getString("correo");
                 validado = jsonObject.getString("validado");
-                grado = jsonObject.getString("grado");
-                adapter.add(id_as + ": " + correo +" |"+grado);
+                adapter.add(id_as + ": " + correo +" |validado: "+validado);
             }catch (JSONException e){
                 Log.e("Error parseo",e.getMessage());
             }

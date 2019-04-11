@@ -68,22 +68,6 @@
                     android:hint="Correo"
                     android:inputType="textEmailAddress" />
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Contraseña"
-                    android:textColor="@android:color/background_dark"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/pass_reg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Ingrese una contraseña"
-                    android:inputType="textPassword" />
-
             </LinearLayout>
 
             <LinearLayout
