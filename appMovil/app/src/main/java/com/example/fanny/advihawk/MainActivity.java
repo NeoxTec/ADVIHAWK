@@ -81,7 +81,6 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.profile) {
             Intent intent = new Intent(getApplicationContext(),Asesor_Perfil.class);
             startActivity(intent);
-        }else if (id == R.id.search) {
         } else if (id == R.id.adviser_list) {
             Intent intent = new Intent(getApplicationContext(),Asesorias_Solicitadas.class);
             startActivity(intent);

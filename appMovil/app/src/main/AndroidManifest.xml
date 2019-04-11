@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fanny.advihawk">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,17 +11,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Lista_asesores" android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".Registro" android:parentActivityName=".Login"/>
-        <activity android:name=".ActivityDetalles_Asesor" android:parentActivityName=".Lista_asesores"/>
-        <activity android:name=".Asesorias_Solicitadas" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Asesorias_Tomadas" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Asesorias_Impartidas" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Solicitar_Asesoria" android:parentActivityName=".Lista_asesores"/>
-        <activity android:name=".Informacion" android:parentActivityName=".Perfil_Asesor"/>
-        <activity android:name=".Asesor_Perfil" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Perfil_Asesor" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Login" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Valoracion_Asesoria"></activity>
+        <activity android:name=".Acceso" />
+        <activity
+            android:name=".Lista_asesores"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Registro"
+            android:parentActivityName=".Login" />
+        <activity
+            android:name=".ActivityDetalles_Asesor"
+            android:parentActivityName=".Lista_asesores" />
+        <activity
+            android:name=".Asesorias_Solicitadas"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Asesorias_Tomadas"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Asesorias_Impartidas"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Solicitar_Asesoria"
+            android:parentActivityName=".Lista_asesores" />
+        <activity
+            android:name=".Informacion"
+            android:parentActivityName=".Asesor_Perfil" />
+        <activity
+            android:name=".Asesor_Perfil"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Login"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
