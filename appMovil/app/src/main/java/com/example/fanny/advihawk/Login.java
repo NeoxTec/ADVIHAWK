@@ -1,6 +1,7 @@
 package com.example.fanny.advihawk;
 
 import android.content.Intent;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,16 +30,12 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
+
         et_correo = findViewById(R.id.et_correo);
         bt_ins = findViewById(R.id.bt_is);
         bt_reg = findViewById(R.id.bt_reg);
 
-        bt_ins.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                getAllAsesoresURL= getAllAsesoresURL+"&user="+et_correo.getText().toString();
-                webREST(getAllAsesoresURL);
-            }
-        });
         bt_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +64,6 @@ public class Login extends AppCompatActivity {
 
         private void parseInformation(String jsonResult){
             JSONArray jsonArray = null;
-            String correo;
             try{
                 jsonArray = new JSONArray(jsonResult);
             }catch (JSONException e){
@@ -76,12 +72,11 @@ public class Login extends AppCompatActivity {
             for(int i=0;i<jsonArray.length();i++){
                 try{
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    correo = jsonObject.getString("correo");
-                    lista.add(correo);
+                    correo = jsonObject.getString("user");
                 }catch (JSONException e){
                     Log.e("Error parseo",e.getMessage());
                 }
-            }iniciar();
+            }iniciar(correo);
             }
 
 
@@ -90,17 +85,16 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void iniciar() {
-        correo = et_correo.getText().toString();
-        for (int i=0;i<lista.size();i++){
-            if(lista.get(i).toString()==correo) {
-                Intent intent = new Intent(getApplicationContext(), Acceso.class);
-                intent.putExtra(Correo,correo);
-                startActivity(intent);
-                startActivity(intent);
-                finish();
-            } else i++;
+    public void iniciar(String dato) {
+        Intent intent = new Intent(getApplicationContext(), Acceso.class);
+        intent.putExtra(Correo,dato);
+        startActivity(intent);
+        startActivity(intent);
     }
-}
 
+    public void ingresar(View view) {
+        correo = et_correo.getText().toString();
+        getAllAsesoresURL = getAllAsesoresURL + "&user=" + correo;
+        webREST(getAllAsesoresURL);
+    }
 }
