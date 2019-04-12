@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,6 +60,8 @@ public class Login extends AppCompatActivity {
                 parseInformation(webResult);
             }catch(Exception e){
                 Log.e("Error de conexion",e.getMessage());
+                Toast toast=Toast.makeText(getApplicationContext(),"Correo no registrado",Toast.LENGTH_LONG);
+                toast.show();
             }
         }
 
