@@ -76,10 +76,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(),Login.class);
             startActivity(intent);
         } else if (id == R.id.session_end) {
-            Intent intent = new Intent(getApplicationContext(),Solicitar_Asesoria.class);
-            startActivity(intent);
-        }else if (id == R.id.profile) {
-            Intent intent = new Intent(getApplicationContext(),Asesor_Perfil.class);
+            Intent intent = new Intent(getApplicationContext(),Login.class);
             startActivity(intent);
         } else if (id == R.id.adviser_list) {
             Intent intent = new Intent(getApplicationContext(),Asesorias_Solicitadas.class);
@@ -89,6 +86,9 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }else if(id == R.id.list_advisors){
             Intent intent = new Intent(getApplicationContext(), Lista_asesores.class);
+            startActivity(intent);
+        }else if(id== R.id.solicitudes){
+            Intent intent = new Intent(getApplicationContext(), Solicitudes_Asesorias.class);
             startActivity(intent);
         }
 

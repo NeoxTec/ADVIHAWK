@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingVertical="20dp"
+    android:background="@drawable/fondo2"
     tools:context=".Registro">
 
     <ScrollView
@@ -14,8 +16,8 @@
         android:paddingHorizontal="12dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
@@ -23,10 +25,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="34dp"
                 android:layout_marginEnd="8dp"
                 android:text="Registrate"
-                android:textColor="@android:color/background_dark"
+                android:textColor="@color/ic_launcher_background"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +37,7 @@
             <LinearLayout
                 android:id="@+id/linearLayout3"
                 android:layout_width="337dp"
-                android:layout_height="207dp"
+                android:layout_height="163dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="14dp"
                 android:layout_marginEnd="8dp"
@@ -50,7 +52,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Nombre"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textColor="@color/ic_launcher_background" />
 
                 <EditText
                     android:id="@+id/apellidos"
@@ -58,7 +61,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Apellidos"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textColor="@color/ic_launcher_background" />
 
                 <EditText
                     android:id="@+id/correo_reg"
@@ -66,7 +70,8 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Correo"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/ic_launcher_background" />
 
             </LinearLayout>
 
@@ -88,8 +93,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Tipos de Usuario"
-                    android:textColor="@android:color/background_dark"
-                    android:textSize="18sp" />
+                    android:textColor="@color/ic_launcher_background"
+                    android:textSize="20sp" />
 
 
                 <RadioGroup
@@ -102,29 +107,38 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Alumno Asesor" />
+                        android:buttonTint="@color/colorPrimary"
+                        android:text="Alumno Asesor"
+                        android:textColor="@color/ic_launcher_background"
+                        android:textSize="16sp" />
 
                     <RadioButton
                         android:id="@+id/rb_prof"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Profesor" />
+                        android:buttonTint="@color/colorPrimary"
+                        android:text="Profesor"
+                        android:textColor="@color/ic_launcher_background"
+                        android:textSize="16sp" />
 
                     <RadioButton
                         android:id="@+id/rb_est"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Alumno Estandar " />
+                        android:buttonTint="?android:attr/colorPrimary"
+                        android:text="Alumno Estandar "
+                        android:textColor="@color/ic_launcher_background"
+                        android:textSize="16sp" />
                 </RadioGroup>
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout5"
-                android:layout_width="334dp"
-                android:layout_height="96dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
@@ -134,29 +148,43 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
-                <Spinner
-                    android:id="@+id/spinner"
-                    android:entries="@array/carrera"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="19" />
+                    android:text="Grupo"
+                    android:textColor="@color/ic_launcher_background"
+                    android:textSize="20sp" />
 
                 <Spinner
-                    android:id="@+id/spinner_grado"
-                    android:entries="@array/grado"
+                    android:id="@+id/spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="19"/>
+                    android:backgroundTint="@color/ic_launcher_background"
+                    android:ems="19"
+                    android:entries="@array/carrera" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Grado"
+                    android:textColor="@color/ic_launcher_background"
+                    android:textSize="20sp" />
+                <Spinner
+                    android:id="@+id/spinner_grado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/ic_launcher_background"
+                    android:ems="19"
+                    android:entries="@array/grado" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="336dp"
-                android:layout_height="58dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="28dp"
                 android:orientation="horizontal"
+                android:paddingVertical="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.743"
                 app:layout_constraintStart_toStartOf="parent"

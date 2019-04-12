@@ -10,24 +10,29 @@
         <item
             android:id="@+id/session_end"
             android:title="Cerrar sesión" />
-        <item
-            android:id="@+id/profile"
-            android:title="Mi perfil"/>
     </group>
-    <item android:title="Opciones">
+    <item android:title="Asesorias">
         <menu>
             <item
                 android:id="@+id/adviser_list"
                 android:icon="@drawable/ic_insert_drive_file"
-                android:title="Lista de asesorías" />
+                android:title="Mis asesorías" />
             <item
                 android:id="@+id/adviser_taken"
                 android:icon="@drawable/ic_move_to_inbox"
                 android:title="Asesorías tomadas" />
+        </menu>
+    </item>
+    <item android:title="Visualización">
+        <menu>
             <item
                 android:id="@+id/list_advisors"
                 android:icon="@drawable/ic_people_black"
                 android:title="Lista asesores" />
+            <item
+                android:id="@+id/solicitudes"
+                android:title="Lista solicitudes"
+                android:icon="@drawable/ic_move_to_inbox"/>
         </menu>
     </item>
 </menu>

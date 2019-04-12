@@ -19,33 +19,33 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Asesorias_Tomadas extends AppCompatActivity {
-    private String getAllAsesoresURL ="http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get";
-    private ListView lista_asesorias_t;
+public class Solicitudes_Asesorias extends AppCompatActivity {
+    private String getSolicitudesURL ="http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get";
+    private ListView lista_solicitudes;
     private ArrayAdapter adapter;
-    public static final String ASESORIAS_T = "1";
+    public static final String SOLICITUD = "1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_asesorias__tomadas);
+        setContentView(R.layout.activity_solicitudes__asesorias);
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
 
-        lista_asesorias_t = findViewById(R.id.lista_asesorias_t);
+        lista_solicitudes = findViewById(R.id.lista_solicitudes);
         adapter = new ArrayAdapter(this, R.layout.asesor_item);
-        lista_asesorias_t.setAdapter(adapter);
-        webREST(getAllAsesoresURL);
+        lista_solicitudes.setAdapter(adapter);
+        webREST(getSolicitudesURL);
 
-        lista_asesorias_t.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lista_solicitudes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.e("ITEM", lista_asesorias_t.getItemAtPosition(position).toString());
+                Log.e("ITEM", lista_solicitudes.getItemAtPosition(position).toString());
                 String datos_asesoria[] =
-                        lista_asesorias_t.getItemAtPosition(position).toString().split(":");
-                String id_asesoria = datos_asesoria[0];
-                Log.e("ASESOR",id_asesoria);
-                Intent i = new Intent(Asesorias_Tomadas.this,Valoracion_Asesoria.class);
-                i.putExtra(ASESORIAS_T,id_asesoria);
+                        lista_solicitudes.getItemAtPosition(position).toString().split(":");
+                String id_solicitu = datos_asesoria[0];
+                Log.e("SOLICITUD",id_solicitu);
+                Intent i = new Intent(Solicitudes_Asesorias.this,Valoracion_Asesoria.class);
+                i.putExtra(SOLICITUD,id_solicitu);
                 startActivity(i);
             }
         });

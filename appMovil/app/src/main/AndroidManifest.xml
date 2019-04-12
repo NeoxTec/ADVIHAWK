@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Valoracion_Asesoria"></activity>
+        <activity android:name=".Solicitudes_Asesorias" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".Valoracion_Asesoria" />
         <activity android:name=".Acceso" />
         <activity
             android:name=".Lista_asesores"
@@ -34,12 +35,6 @@
         <activity
             android:name=".Solicitar_Asesoria"
             android:parentActivityName=".Lista_asesores" />
-        <activity
-            android:name=".Informacion"
-            android:parentActivityName=".Asesor_Perfil" />
-        <activity
-            android:name=".Asesor_Perfil"
-            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Login"
             android:parentActivityName=".MainActivity" />
