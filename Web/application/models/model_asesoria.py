@@ -1,11 +1,12 @@
-import config as config # importa el archivo config
+import web
+import app 
 
-db = config.db # crea un objeto del objeto db creado en config 
+db = app.db
 
 '''
 Metodo para seleccionar todos los registros de la tabla asesoria
 '''
-def select_asesoria():
+def get_asesoria():
     try:
         return db.select('asesorias') # selecciona todos los registros de la tabla de clientes
     except Exception as e:
@@ -14,7 +15,40 @@ def select_asesoria():
         return None
 
 '''
-Metodo para seleccionar un registro que coincida con el numero de asesoria dado
+Metodo para mostrar el id_as
+'''
+def get_id_as(asesor):
+    try:
+        return db.select('asesor', what="id_as", where='asesor = $asesor') #selecciona el primer registro que coincida con el nombre
+    except Exception as e:
+        print "Model select_num_as Error ()",format(e.args)
+        print "Model select_num_as Message {}",format(e.message)
+        return None
+
+'''
+Metodo para seleccionar un registro que coincida con el asesor de asesoria dado
+'''
+def get_solicitado(asesor):
+    try:
+        return db.select('asesorias', where= 'asesor = $asesor', vars=locals())[0] #selecciona el primer registro que coincida con el nombre
+    except Exception as e:
+        print "Model select_num_as Error ()",format(e.args)
+        print "Model select_num_as Message {}",format(e.message)
+        return None
+
+'''
+Metodo para seleccionar un registro que coincida con el asesor de asesoria dado
+'''
+def get_solicitante(solicitante):
+    try:
+        return db.select('asesorias', where= 'solicitante = $solicitante', vars=locals())[0] #selecciona el primer registro que coincida con el nombre
+    except Exception as e:
+        print "Model select_num_as Error ()",format(e.args)
+        print "Model select_num_as Message {}",format(e.message)
+        return None
+
+'''
+Metodo para seleccionar un registro que coincida con el solicitante de asesoria dado
 '''
 def num_as(num_as):
     try:
@@ -27,9 +61,9 @@ def num_as(num_as):
 '''
 Metodo para insertar un nuevo registro 
 '''
-def insert_asesoria(num_as,dia,hora,estado,solicitante,asesor,tema):
+def insert_asesoria(dia,hora,solicitante,asesor,tema):
     try:
-        return db.insert('asesorias',num_as=num_as,dia=dia,hora=hora,estado=estado,solicitante=solicitante,asesor=asesor,tema=tema) # inserta un registro en clientes
+        return db.insert('asesorias',dia=dia,hora=hora,estado='Pendiente',solicitante=solicitante,asesor=asesor,tema=tema) # inserta un registro en clientes
     except Exception as e:
         print "Model insert_asesoria Error ()",format(e.args)
         print "Model insert_asesoria Message {}",format(e.message)

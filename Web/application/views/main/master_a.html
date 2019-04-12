@@ -1,0 +1,41 @@
+$def with(page)
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" >
+    <link rel="icon" type="image/png" href="/static/images/ADVIHAWK1.png">
+
+    <title>ADVIHAWK</title>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #25b378;">
+              <a href="/home"><img src="/static/images/ADVIHAWK3.png" width="200" height="60" class="d-inline-block align-top" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <section class="collapse navbar-collapse" id="navbarNav">
+              <ul class="nav navbar-nav navbar-right">
+                    $if page.tipo == '0':
+                        <li class='active'><img src="$page.picture"  style="max-width:100px; margin-top: -7px; margin-left: 720px; border-radius: 20%;" class="img-circle" height="27px" width="30px"> $page.user</a></li>
+                        <li style="margin-left: 20px;"><a href="/logout"><img src="/static/images/logout.png" data-toggle="tooltip" data-placement="bottom" title="Salir" height="27px" width="30px" ></a></li>
+                    $elif page.tipo =='1':
+                        <li class='active'><img src="$page.picture"  style="max-width:100px; margin-top: -7px; margin-left: 700px; border-radius: 20%;" class="img-circle" height="27px" width="30px"> $page.user</a></li>
+                        <li style="margin-left: 10px;"><a href="/logout"><img src="/static/images/logout.png" data-toggle="tooltip" data-placement="bottom" title="Salir" height="27px" width="30px" ></a></li>
+              </ul>
+            </section>
+          </nav>
+    </header>
+    <section class="container">$:page</section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

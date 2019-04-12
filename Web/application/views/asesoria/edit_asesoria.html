@@ -1,0 +1,39 @@
+$def with(datos)
+<br>
+<h1 class="text-center"><img src="/static/images/resume.png" height="50" width="50">   Editar Estado de Asesoría</h1>
+<br>
+<form method="POST">
+        <section class="form-group">
+                <label for="dia"><img src="/static/images/id_cred.png" height="20" width="20">  ID:</label>
+                <input type="text" class="form-control"  placeholder="num_as" id="num_as" name="num_as" value="$datos.num_as" readonly="true">
+        </section>
+        <section class="form-group">
+                <label for="dia"><img src="/static/images/calendar.png" height="20" width="20">  Día:</label>
+                <input type="date" class="form-control"  placeholder="Día" id="dia" name="dia" value="$datos.dia" readonly="true">
+        </section>
+        <section class="form-group">
+            <label for="hora"><img src="/static/images/clock.png" height="20" width="20"> Hora:</label>
+            <input type="time" class="form-control" placeholder="Hora" id="hora" name="hora" value="$datos.hora" readonly="true"> 
+        </section>
+        <section class="form-group">
+            <label  class="font-weight-bold" for="grado"><img src="/static/images/school.png" height="30" width="30">  Estado:</label>
+            <select class="form-control" id="estado" name="estado">
+                <option value="pendiente" selected>Pendiente</option>
+                <option value="aceptado">Aceptado</option>
+                <option value="rechazado">Rechazado</option>
+                <option value="finalizado">Finalizado</option>
+              </select>
+            </section>
+        <section class="form-group">
+            <label for="hora"><img src="/static/images/clock.png" height="20" width="20"> Solicitante:</label>
+            <input type="text" class="form-control" placeholder="Hora" id="hora" name="hora" required value="$datos.solicitante" readonly="true"> 
+        </section>
+        <section class="form-group">
+                <label for="Tema"><img src="/static/images/description.png" height="20" width="20">Tema y lugar de la asesoria:</label>
+                <input type="text" class="form-control" placeholder="Tema" id="tema" name="tema" required value="$datos.tema" readonly="true"> 
+        </section>
+        <br>
+        <button type="submit" class="btn btn-success btn-lg btn-block"><img src="/static/images/refresh-button.png" height="15" width="15"> Actualizar</button>
+</form>
+<br>
+<a href="/index_asesoria"><button class="btn btn-danger btn-lg btn-block">Cancelar</button></a>

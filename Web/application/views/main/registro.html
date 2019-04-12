@@ -1,0 +1,84 @@
+$def with(message)
+$var tipo = '-1'
+$if message != None:
+    <br>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Bienvenido!</strong> $message
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+<br>
+<h1 class="text-center"><img src="/static/images/resume.png" height="50" width="50">  Registro Usuario</h1>
+<br>
+<form method="POST">
+        <section class="form-group">
+                <label for="correo" class="font-weight-bold"><img src="/static/images/university.png" height="30" width="30">  Correo:</label>
+                <input type="text" class="form-control"  placeholder="Correo" id="correo" name="user" required>
+        </section>
+        <br>
+        <section class="form-group">
+            <label for="nombre" class="font-weight-bold"><img src="/static/images/user-silhouette.png" height="30" width="30">  Nombre Completo:</label>
+            <input type="text" class="form-control" placeholder="nombre" id="nombre" name="nombre" required> 
+        </section>
+        <br>
+        <section class="form-group">
+        <label  for="carrera" class="font-weight-bold"><img src="/static/images/career.png" height="30" width="30">  Carrera:</label>
+        <select class="form-control" id="carrera" name="carrera">
+            <option selected class="font-weight-bold">Selecciona una carrera: </option>
+            <option class="font-weight-bold">Ingenierías</option>
+            <option value="tic">Tecnologías de la información y la comunicación</option>
+            <option value="dn">Desarrollo e Inovación Empresarial</option>
+            <option value="en">Energías Renovables</option>
+            <option value="mec">Mecatrónica</option>
+            <option value="nano">Nanotecnología</option>
+            <option value="in">Ingeniería Industrial</option>
+            <option class="font-weight-bold">Licenciaturas</option>
+            <option value="conta">Contaduría</option>
+            <option value="enf">Enfermería</option>
+            <option value="crimi">Criminalística</option>
+            <option value="tf">Teraía Física</option>
+            <option value="sr">Salud reproductiva y partería</option>
+            <option value="di">Diseño digital y producción audiovisual</option>
+          </select>
+        </section>
+        <br>
+        <section class="form-group">
+        <label  class="font-weight-bold" for="grado"><img src="/static/images/school.png" height="30" width="30">  Grado:</label>
+        <select class="form-control" id="grado" name="grado">
+            <option selected class="font-weight-bold">Selecciona el grado: </option>
+            <option value="0">Cuatrimestre de inmersión</option>
+            <option value="1">1er Cuatrimestre</option>
+            <option value="2">2do Cuatrimestre</option>
+            <option value="3">3er Cuatrimestre</option>
+            <option value="4">4to Cuatrimestre</option>
+            <option value="5">5to Cuatrimestre</option>
+            <option value="6">6to Cuatrimestre</option>
+            <option value="7">7to Cuatrimestre</option>
+            <option value="8">8vo Cuatrimestre</option>
+            <option value="9">9no Cuatrimestre</option>
+            <option value="10">10mo Cuatrimestre</option>
+            <option value="11">11vo Cuatrimestre</option>
+          </select>
+        </section>
+        <br>
+        <section class="form-group">
+                <label class="font-weight-bold"><img src="/static/images/friends.png" height="30" width="30">  Tipo de Usuario:</label>
+                <section class="radio">
+                        <label><input type="radio" name="tipo" value=0>Alumno Asesor</label>
+                    </section>
+                <section class="radio">
+                    <label><input type="radio" name="tipo" value=1 checked>Alumno Estándar</label>
+                </section>
+          </section>
+        </section>
+        <br>
+        <section class="container">
+        <button type="submit" class="btn btn-success btn-lg" style="width:1150px; "><img src="/static/images/new-user_2.png" height="20" width="20"> Registrar</button>
+      </section>
+</form>
+<br>
+<br>
+<section class="container">
+<a href="/"><button class="btn btn-danger btn-lg " style="width:1150px; ">Cancelar</button></a>
+</section>
