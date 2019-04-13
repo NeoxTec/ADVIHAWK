@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:title="Visualizaciónes">
+            <menu>
+                <item
+                    android:id="@+id/asesorias_edo"
+                    android:icon="@drawable/ic_insert_drive_file"
+                    android:title="Mis asesorías" />
+            </menu>
+        </item>
+    </group>
+
+    <item android:title="Visualización">
+        <menu>
+            <item
+                android:id="@+id/lista_asesores"
+                android:icon="@drawable/ic_people_black"
+                android:title="Solicitar asesor" />
+        </menu>
+    </item>
+    <item android:title="Sesión">
+        <menu>
+            <item
+                android:id="@+id/session_end"
+                android:title="Cerrar sesión"
+                android:icon="@drawable/ic_close"/>
+        </menu>
+    </item>
+</menu>
