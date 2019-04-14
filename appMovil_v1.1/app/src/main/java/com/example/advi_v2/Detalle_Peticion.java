@@ -27,7 +27,7 @@ public class Detalle_Peticion extends AppCompatActivity {
     LinearLayout ll_pet,ll_ce;
 
     private String tipo;
-    private String websurl = "http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
+    private String websurl = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

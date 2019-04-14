@@ -27,8 +27,8 @@ public class Detalle_Asesoria extends AppCompatActivity {
     EditText et_estado;
     EditText et_asesor;
 
-    private String webservice_url = "http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
-    private String consulta_asesor = "http://advi01.herokuapp.com/api_asesores?user_hash=12345&action=get&id_as=";
+    private String webservice_url = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
+    private String consulta_asesor = "http://advihawk.herokuapp.com/api_asesores?user_hash=12345&action=get&id_as=";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

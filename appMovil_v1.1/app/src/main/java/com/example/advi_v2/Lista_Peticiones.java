@@ -21,7 +21,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Lista_Peticiones extends AppCompatActivity {
-    private String getAllPedidosURL ="http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get";
+    private String getAllPedidosURL ="http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get";
     private ListView lista_solicitudes;
     private ArrayAdapter adapter;
     private Spinner sp_as;

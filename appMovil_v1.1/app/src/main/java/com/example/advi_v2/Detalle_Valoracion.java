@@ -27,8 +27,8 @@ public class Detalle_Valoracion extends AppCompatActivity {
     EditText et_solicitante;
     RatingBar rb;
 
-    private String websurl = "http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
-    private String webvalor = "http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
+    private String websurl = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
+    private String webvalor = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

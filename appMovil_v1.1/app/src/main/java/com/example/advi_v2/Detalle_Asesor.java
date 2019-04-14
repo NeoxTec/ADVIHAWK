@@ -24,7 +24,7 @@ public class Detalle_Asesor extends AppCompatActivity {
     EditText et_validado;
     EditText et_habilidades;
 
-    private String weburl = "http://advi01.herokuapp.com/api_asesor?user_hash=12345&action=get&id_as=";
+    private String weburl = "http://advihawk.herokuapp.com/api_asesor?user_hash=12345&action=get&id_as=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

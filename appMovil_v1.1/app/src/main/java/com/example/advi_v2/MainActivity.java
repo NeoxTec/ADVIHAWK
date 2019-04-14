@@ -21,7 +21,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private String getAllAsesoresURL ="http://advi01.herokuapp.com/api_users?user_hash=12345&action=get";
+    private String getAllAsesoresURL ="http://advihawk.herokuapp.com/api_users?user_hash=12345&action=get";
     EditText et_correo;
     public String mail_user;
     public int tipo_user;

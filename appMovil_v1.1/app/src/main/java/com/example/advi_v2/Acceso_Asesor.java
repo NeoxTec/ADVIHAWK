@@ -79,9 +79,11 @@ public class Acceso_Asesor extends AppCompatActivity
 
         if (id == R.id.asesorias_edo) {
             Intent intent = new Intent(getApplicationContext(),Lista_Asesorias.class);
+            intent.putExtra(Correo_A,asesor);
             startActivity(intent);
         } else if (id == R.id.valoraciones) {
             Intent intent = new Intent(getApplicationContext(), Lista_Valoraciones.class);
+            intent.putExtra(Correo_A,asesor);
             startActivity(intent);
         } else if (id == R.id.lista_asesores) {
             Intent intent = new Intent(getApplicationContext(),Lista_Asesores.class);

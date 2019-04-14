@@ -20,7 +20,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Lista_Asesores extends AppCompatActivity {
-    private String getAllAsesoresURL ="http://advi01.herokuapp.com/api_asesores?user_hash=12345&action=get";
+    private String getAllAsesoresURL ="http://advihawk.herokuapp.com/api_asesor?user_hash=12345&action=get";
     private ListView lista_asesores;
     private ArrayAdapter adapter;
     public static final String ASESOR = "1";

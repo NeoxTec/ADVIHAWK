@@ -25,7 +25,7 @@ public class Registro extends AppCompatActivity {
     private Spinner campoGrado,campoCarrera;
     private RadioGroup campoTipo;
     private Toast toast2;
-    private String registro_url = "http://advi01.herokuapp.com/api_users?user_hash=12345&action=put";
+    private String registro_url = "http://advihawk.herokuapp.com/api_users?user_hash=12345&action=put";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

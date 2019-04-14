@@ -21,10 +21,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Lista_Asesorias extends AppCompatActivity {
-    private String getAllAsesoriasURL ="http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get";
+    private String getAllAsesoriasURL ="http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get_solicitante&solicitante=";
     private ListView lista_asesorias;
     private ArrayAdapter adapter;
     private Spinner sp_as;
+    private String solicitante;
     public static final String ASESORIA = "1";
 
     @Override
@@ -37,6 +38,11 @@ public class Lista_Asesorias extends AppCompatActivity {
         adapter = new ArrayAdapter(this, R.layout.asesor_item);
         lista_asesorias.setAdapter(adapter);
         sp_as = findViewById(R.id.tipo_asesoria);
+
+        Intent in = getIntent();
+        solicitante = in.getStringExtra(Acceso_Asesor.Correo_A);
+
+        getAllAsesoriasURL=getAllAsesoriasURL+solicitante;
         ObtenerURL();
 
         lista_asesorias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -73,9 +79,9 @@ public class Lista_Asesorias extends AppCompatActivity {
 
     private void parseInformation(String jsonResult){
         JSONArray jsonArray = null;
-        String correo;
-        String id_as;
-        String validado;
+        String asesor;
+        String num_as;
+        String dia;
         try{
             jsonArray = new JSONArray(jsonResult);
         }catch (JSONException e){
@@ -84,10 +90,10 @@ public class Lista_Asesorias extends AppCompatActivity {
         for(int i=0;i<jsonArray.length();i++){
             try{
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                id_as = jsonObject.getString("id_as");
-                correo = jsonObject.getString("correo");
-                validado = jsonObject.getString("validado");
-                adapter.add(id_as + ": " + correo +" |validado: "+validado);
+                num_as = jsonObject.getString("num_as");
+                asesor = jsonObject.getString("asesor");
+                dia = jsonObject.getString("dia");
+                adapter.add(num_as + ": " + asesor +" |dia: "+dia);
             }catch (JSONException e){
                 Log.e("Error parseo",e.getMessage());
             }
