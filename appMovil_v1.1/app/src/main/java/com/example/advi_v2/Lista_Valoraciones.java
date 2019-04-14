@@ -5,6 +5,8 @@ import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -17,6 +19,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import static com.example.advi_v2.Lista_Asesorias.ASESORIA;
 
 public class Lista_Valoraciones extends AppCompatActivity {
     MainActivity maa;
@@ -38,6 +42,20 @@ public class Lista_Valoraciones extends AppCompatActivity {
         getAllValoracionURL=getAllValoracionURL+maa.mail_user;
         Log.e("URL",getAllValoracionURL);
         webREST(getAllValoracionURL);
+
+        lista_valoraciones.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.e("ITEM", lista_valoraciones.getItemAtPosition(position).toString());
+                String datos_valoracion[] =
+                        lista_valoraciones.getItemAtPosition(position).toString().split(":");
+                String id_valoracion = datos_valoracion[0];
+                Log.e("ASESOR",id_valoracion);
+                Intent i = new Intent(Lista_Valoraciones.this,Detalle_Valoracion.class);
+                i.putExtra(VALORACION,id_valoracion);
+                startActivity(i);
+            }
+        });
     }
     private void webREST(String respuestaURL){
         try{

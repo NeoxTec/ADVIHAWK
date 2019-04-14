@@ -40,11 +40,9 @@ public class Lista_Peticiones extends AppCompatActivity {
         lista_solicitudes.setAdapter(adapter);
         sp_as = findViewById(R.id.tipo_asesoria);
 
-        Intent in = getIntent();
-
         getAllPedidosURL=getAllPedidosURL+"_asesor&asesor="+maa.mail_user;
         Log.e("URL",getAllPedidosURL);
-        //webREST(getAllPedidosURL);
+        webREST(getAllPedidosURL);
 
 
         lista_solicitudes.setOnItemClickListener(new AdapterView.OnItemClickListener() {

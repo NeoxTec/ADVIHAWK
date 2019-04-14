@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,11 +21,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Detalle_Valoracion extends AppCompatActivity {
-    EditText et_dia;
-    EditText et_hora;
-    EditText et_tema;
-    EditText et_estado;
-    EditText et_solicitante;
+    TextView et_dia;
+    TextView et_hora;
+    TextView et_tema;
+    TextView et_estado;
+    TextView et_solicitante;
     RatingBar rb;
 
     private String websurl = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
@@ -45,10 +46,13 @@ public class Detalle_Valoracion extends AppCompatActivity {
 
         Intent intent = getIntent();
         String num_ase = intent.getStringExtra(Lista_Asesorias.ASESORIA);
+
         websurl += num_ase;
         webvalor += num_ase;
         webServiceRest(websurl);
+        Log.e("URL_DETALLE",websurl);
         webRest(webvalor);
+        Log.e("VALORACION",webvalor);
     }
 
     private void webServiceRest(String requestURL) {

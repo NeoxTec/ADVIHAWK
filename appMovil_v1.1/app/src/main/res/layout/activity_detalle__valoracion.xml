@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingHorizontal="75dp"
+                android:paddingHorizontal="15dp"
                 android:paddingVertical="12dp">
 
                 <RatingBar
@@ -42,7 +42,6 @@
                     android:layout_height="wrap_content"
                     android:numStars="5"
                     android:rating="2"
-                    android:stepSize="0.5"
                     android:theme="@style/Rating" />
             </LinearLayout>
 
@@ -60,12 +59,15 @@
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/edo_val"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -83,12 +85,15 @@
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/v_fecha_as"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:editable="false"
                     android:ems="10"
-                    android:inputType="date" />
+                    android:inputType="date"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -106,13 +111,16 @@
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/v_hr_as"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
+                    android:editable="false"
                     android:ems="10"
-                    android:inputType="time" />
+                    android:inputType="time"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -131,13 +139,16 @@
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/v_tema_as"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
+                    android:editable="false"
                     android:ems="10"
-                    android:inputType="textMultiLine" />
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp" />
             </LinearLayout>
 
         </LinearLayout>
