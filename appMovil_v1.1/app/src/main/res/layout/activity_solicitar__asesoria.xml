@@ -92,6 +92,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:fontFamily="sans-serif-black"
+            android:onClick="proceso"
             android:paddingVertical="19dp"
             android:text="Solicitar"
             android:textAlignment="center"
