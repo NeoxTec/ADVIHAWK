@@ -35,8 +35,8 @@ public class Acceso_Asesor extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         View header = ((NavigationView)findViewById(R.id.nav_view)).getHeaderView(0);
         TextView correo = (TextView) header.findViewById(R.id.tv_nh_asesor);
-
         asesor = MainActivity.mail_user;
+        correo.setText(asesor);
 
         TextView tipo = (TextView) header.findViewById(R.id.tv_nh_asesor_tipo);
         tipo.setText("Usuario Asesor");
@@ -50,6 +50,11 @@ public class Acceso_Asesor extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+    @Override
+    protected void onPause() {
+      super.onPause();
+    //La app esta minimizada!.
     }
 
     @Override

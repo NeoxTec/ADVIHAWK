@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -31,6 +32,7 @@ public class Detalle_Asesoria extends AppCompatActivity {
     RatingBar ll_rating;
     Button bt;
     String num_ase;
+    Spinner spin;
 
     private String webservice_url = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
     private String consulta_asesor = "http://advihawk.herokuapp.com/api_asesores?user_hash=12345&action=get&id_as=";
@@ -44,23 +46,8 @@ public class Detalle_Asesoria extends AppCompatActivity {
         et_hora = findViewById(R.id.hr_asesoria);
         et_tema = findViewById(R.id.tema_asesoria);
         et_asesor = findViewById(R.id.asesor_asesoria);
-        ll_rating = (RatingBar) findViewById(R.id.ratb_das);
+        spin = (Spinner) findViewById(R.id.valor_asesoria);
         bt = (Button) findViewById(R.id.detas_send);
-
-        ll_rating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                if (rating > 1){
-                    bt.setVisibility(View.VISIBLE);
-                    Toast.makeText(getApplicationContext(),"cambiando valor",Toast.LENGTH_LONG);
-                    if (et_estado.getText().toString()== "finalizado"){
-                        bt.setEnabled(true);}
-                        else bt.setEnabled(false);
-                }else {bt.setVisibility(View.INVISIBLE);
-                bt.setEnabled(false);}
-            }
-        });
-
         Intent intent = getIntent();
         num_ase = intent.getStringExtra(Lista_Asesorias.ASESORIA);
         webservice_url+=num_ase;

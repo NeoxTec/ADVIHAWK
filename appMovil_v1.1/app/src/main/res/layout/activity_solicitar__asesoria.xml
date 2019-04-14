@@ -27,17 +27,22 @@
         android:layout_height="wrap_content"
         android:paddingVertical="10dp"
         android:orientation="horizontal">
-        <TextView
+        <Button
+            android:id="@+id/bt_fecha_solicitada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/background_dark"
-            android:textSize="20dp"
-            android:text="Fecha: "/>
+            android:textSize="16dp"
+            android:paddingHorizontal="20dp"
+            android:text="Fecha"/>
+
         <EditText
             android:id="@+id/fecha_solicitada"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="19sp"
             android:ems="10"
+            android:hint="aaaa.mm.dd"
             android:inputType="date" />
     </LinearLayout>
     <LinearLayout
@@ -46,17 +51,22 @@
         android:layout_height="wrap_content"
         android:paddingVertical="10dp"
         android:orientation="horizontal">
-        <TextView
+        <Button
+            android:id="@+id/bt_hora_solicitada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/background_dark"
-            android:textSize="20dp"
-            android:text="Hora: "/>
+            android:textSize="16dp"
+            android:paddingHorizontal="20sp"
+            android:text="Hora"/>
+
         <EditText
             android:id="@+id/et_hora_solicitada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginHorizontal="10dp"
+            android:hint="hh:mm"
             android:inputType="time" />
     </LinearLayout>
     <LinearLayout

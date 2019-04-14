@@ -1,6 +1,9 @@
 package com.example.advi_v2;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
 
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
+            // Si hay conexión a Internet en este momento
+        } else {
+            // No hay conexión a Internet en este momento
+            Toast t =Toast.makeText(getApplicationContext(),"No hay acceso a Internet",Toast.LENGTH_LONG);
+            t.show();
+        }
+
         et_correo = findViewById(R.id.et_correo);
         bt_ins = findViewById(R.id.bt_is);
         bt_reg = findViewById(R.id.bt_reg);
@@ -43,11 +56,7 @@ public class MainActivity extends AppCompatActivity {
         bt_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrar();
-            }
-        });
-    }
-
+                registrar(); }});}
 
     private void webREST(String respuesta){
         try{
