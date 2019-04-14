@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Detalle_Peticion"></activity>
+        <activity android:name=".Detalle_Valoracion"></activity>
+        <activity android:name=".Detalle_Peticion" />
         <activity android:name=".Detalle_Asesoria" />
         <activity android:name=".Lista_Valoraciones" />
         <activity android:name=".Lista_Asesorias" />

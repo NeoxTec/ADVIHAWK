@@ -15,7 +15,8 @@ import android.widget.TextView;
 
 public class Acceso_Asesor extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+        public static final String Correo_A = "3";
+        private String asesor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,8 @@ public class Acceso_Asesor extends AppCompatActivity
         TextView correo = (TextView) header.findViewById(R.id.tv_nh_asesor);
         Intent i = getIntent();
         correo.setText(i.getStringExtra(MainActivity.Correo));
+        asesor = correo.getText().toString();
+
         TextView tipo = (TextView) header.findViewById(R.id.tv_nh_asesor_tipo);
         tipo.setText("Usuario Asesor");
     }
@@ -85,6 +88,7 @@ public class Acceso_Asesor extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.peticiones) {
             Intent intent = new Intent(getApplicationContext(), Lista_Peticiones.class);
+            intent.putExtra(Correo_A,asesor);
             startActivity(intent);
         }else if(id == R.id.session_end){
             Intent intent = new Intent(getApplicationContext(),MainActivity.class);

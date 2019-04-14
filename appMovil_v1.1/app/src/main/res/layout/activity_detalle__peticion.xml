@@ -30,7 +30,33 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="35dp"
+                android:paddingVertical="10dp">
+
+                <TextView
+                    android:id="@+id/Solicitante"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Solicitante: "
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/solicitante"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:ems="10"
+                    android:inputType="text" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -110,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingHorizontal="10dp"
-                    android:text="Tema: "
+                    android:text="Tema y lugar: "
                     android:textColor="@android:color/background_dark"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -121,32 +147,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:ems="10"
-                    android:inputType="text" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingHorizontal="35dp"
-                android:paddingVertical="10dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="10dp"
-                    android:text="Lugar: "
-                    android:textColor="@android:color/background_dark"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/lugar_asesoria"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:ems="10"
                     android:inputType="textMultiLine" />
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
@@ -159,7 +162,7 @@
         android:layout_marginTop="12dp">
 
         <Button
-            android:id="@+id/petas_ac"
+            android:id="@+id/bt_ace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -171,7 +174,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/petas_can"
+            android:id="@+id/bt_can"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -182,15 +185,17 @@
             android:textSize="19sp"
             android:textStyle="bold" />
         </LinearLayout>
-        <LinearLayout
-            android:id="@+id/LinLay_pa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingTop="5dp"
-            android:paddingHorizontal="15dp">
+
+    <LinearLayout
+        android:id="@+id/LinLay_ace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="15dp"
+        android:paddingTop="5dp">
+
         <Button
-            android:id="@+id/petas_fin"
+            android:id="@+id/bt_fin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -201,16 +206,16 @@
             android:textSize="19sp"
             android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/detas_can"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:fontFamily="sans-serif-black"
-                android:text="Rechazar"
-                android:textColor="@color/ic_launcher_background"
-                android:textSize="19sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/bt_rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:fontFamily="sans-serif-black"
+            android:text="Rechazar"
+            android:textColor="@color/ic_launcher_background"
+            android:textSize="19sp"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

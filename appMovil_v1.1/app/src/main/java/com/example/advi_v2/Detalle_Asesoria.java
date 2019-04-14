@@ -25,9 +25,10 @@ public class Detalle_Asesoria extends AppCompatActivity {
     EditText et_lugar;
     EditText et_tema;
     EditText et_estado;
+    EditText et_asesor;
 
-    private String webservice_url = "http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get&id_as=";
-
+    private String webservice_url = "http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
+    private String consulta_asesor = "http://advi01.herokuapp.com/api_asesores?user_hash=12345&action=get&id_as=";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +37,8 @@ public class Detalle_Asesoria extends AppCompatActivity {
         et_estado = findViewById(R.id.edo_asesoria);
         et_fecha = findViewById(R.id.fecha_asesoria);
         et_hora = findViewById(R.id.hr_asesoria);
-        et_lugar = findViewById(R.id.lugar_asesoria);
         et_tema = findViewById(R.id.tema_asesoria);
+        et_asesor = findViewById(R.id.asesor_asesoria);
 
         Intent intent = getIntent();
         String num_ase = intent.getStringExtra(Lista_Asesorias.ASESORIA);
@@ -65,10 +66,10 @@ public class Detalle_Asesoria extends AppCompatActivity {
     private void parseInformation(String jsonResult){
         JSONArray jsonArray = null;
         String estado;
-        String lugar;
         String fecha;
         String hora;
         String tema;
+        String asesor;
         try{
             jsonArray = new JSONArray(jsonResult);
         }catch (JSONException e){
@@ -82,17 +83,58 @@ public class Detalle_Asesoria extends AppCompatActivity {
                 fecha = jsonObject.getString("fecha");
                 hora = jsonObject.getString("hora");
                 tema = jsonObject.getString("tema");
-                lugar = jsonObject.getString("lugar");
+                asesor = jsonObject.getString("asesor");//toma dato json y lo hace texto
 
                 //Se muestran los datos del cliente en su respectivo EditText
                 et_estado.setText(estado);
-                et_lugar.setText(lugar);
                 et_fecha.setText(fecha);
                 et_tema.setText(tema);
                 et_hora.setText(hora);
+                consulta_asesor+=asesor;//actualiza url para tener correo de asesor
+                webRest_AS(consulta_asesor);//invoca conslta
 
             }catch (JSONException e){
                 Log.e("Error parseo ",e.getMessage());
+            }
+        }
+    }
+    //toma datos json
+    private void webRest_AS(String requestURL){
+        try{
+            URL url = new URL(requestURL);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String line = "";
+            String webSResult="";
+            while ((line = bufferedReader.readLine()) != null){
+                webSResult += line;
+            }
+            bufferedReader.close();
+            parIn(webSResult);
+        }catch(Exception e){
+            Log.e("Error 110 dato asesor",e.getMessage());
+        }
+    }
+
+    private void parIn(String jsonResult){
+        JSONArray jsonArray = null;
+        String correo;
+        try{
+            jsonArray = new JSONArray(jsonResult);
+        }catch (JSONException e){
+            Log.e("Error 111 dato asesor",e.getMessage());
+        }
+        for(int i=0;i<jsonArray.length();i++){
+            try{
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                //Se obtiene cada uno de los datos cliente del webservice
+                correo = jsonObject.getString("correo");
+
+                //Se muestran los datos del cliente en su respectivo EditText
+                et_asesor.setText(correo);
+
+            }catch (JSONException e){
+                Log.e("Error parseo asesor",e.getMessage());
             }
         }
     }
