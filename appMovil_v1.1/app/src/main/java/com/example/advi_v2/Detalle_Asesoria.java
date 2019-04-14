@@ -8,6 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RatingBar;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,10 +25,11 @@ import java.sql.Time;
 public class Detalle_Asesoria extends AppCompatActivity {
     EditText et_fecha;
     EditText et_hora;
-    EditText et_lugar;
     EditText et_tema;
     EditText et_estado;
     EditText et_asesor;
+    RatingBar ll_rating;
+    Button bt;
 
     private String webservice_url = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
     private String consulta_asesor = "http://advihawk.herokuapp.com/api_asesores?user_hash=12345&action=get&id_as=";
@@ -39,6 +43,22 @@ public class Detalle_Asesoria extends AppCompatActivity {
         et_hora = findViewById(R.id.hr_asesoria);
         et_tema = findViewById(R.id.tema_asesoria);
         et_asesor = findViewById(R.id.asesor_asesoria);
+        ll_rating = (RatingBar) findViewById(R.id.ratb_das);
+        bt = (Button) findViewById(R.id.detas_send);
+
+        ll_rating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                if (rating > 1){
+                    bt.setVisibility(View.VISIBLE);
+                    Toast.makeText(getApplicationContext(),"cambiando valor",Toast.LENGTH_LONG);
+                    if (et_estado.getText().toString()== "finalizado"){
+                        bt.setEnabled(true);}
+                        else bt.setEnabled(false);
+                }else {bt.setVisibility(View.INVISIBLE);
+                bt.setEnabled(false);}
+            }
+        });
 
         Intent intent = getIntent();
         String num_ase = intent.getStringExtra(Lista_Asesorias.ASESORIA);
@@ -80,7 +100,7 @@ public class Detalle_Asesoria extends AppCompatActivity {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 //Se obtiene cada uno de los datos cliente del webservice
                 estado = jsonObject.getString("estado");
-                fecha = jsonObject.getString("fecha");
+                fecha = jsonObject.getString("dia");
                 hora = jsonObject.getString("hora");
                 tema = jsonObject.getString("tema");
                 asesor = jsonObject.getString("asesor");//toma dato json y lo hace texto
@@ -90,6 +110,8 @@ public class Detalle_Asesoria extends AppCompatActivity {
                 et_fecha.setText(fecha);
                 et_tema.setText(tema);
                 et_hora.setText(hora);
+                et_asesor.setText(asesor);
+                detalle();
                 consulta_asesor+=asesor;//actualiza url para tener correo de asesor
                 webRest_AS(consulta_asesor);//invoca conslta
 
@@ -137,5 +159,7 @@ public class Detalle_Asesoria extends AppCompatActivity {
                 Log.e("Error parseo asesor",e.getMessage());
             }
         }
+    }
+    private void detalle() {
     }
 }

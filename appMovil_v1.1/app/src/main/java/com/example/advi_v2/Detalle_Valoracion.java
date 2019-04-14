@@ -29,7 +29,7 @@ public class Detalle_Valoracion extends AppCompatActivity {
     RatingBar rb;
 
     private String websurl = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
-    private String webvalor = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
+    private String webvalor = "http://advihawk.herokuapp.com/api_valoracion?user_hash=12345&action=get&num_as=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class Detalle_Valoracion extends AppCompatActivity {
         rb = (RatingBar) findViewById(R.id.ratb_das);
 
         Intent intent = getIntent();
-        String num_ase = intent.getStringExtra(Lista_Asesorias.ASESORIA);
+        String num_ase = intent.getStringExtra(Lista_Valoraciones.VALORACION);
 
         websurl += num_ase;
         webvalor += num_ase;

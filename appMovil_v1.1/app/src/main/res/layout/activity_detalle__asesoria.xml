@@ -70,7 +70,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:textColor="@color/colorBack" />
             </LinearLayout>
 
             <LinearLayout
@@ -92,7 +94,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:enabled="false"
+                    android:inputType="text"
+                    android:textColor="@color/colorBack"
+                    android:textStyle="italic" />
             </LinearLayout>
 
             <LinearLayout
@@ -115,7 +120,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="date" />
+                    android:enabled="false"
+                    android:inputType="date"
+                    android:textColor="@color/colorBack"
+                    android:textStyle="italic" />
             </LinearLayout>
 
             <LinearLayout
@@ -139,7 +147,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:ems="10"
-                    android:inputType="time" />
+                    android:enabled="false"
+                    android:inputType="time"
+                    android:textColor="@color/colorBack"
+                    android:textStyle="italic" />
             </LinearLayout>
 
             <LinearLayout
@@ -164,7 +175,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:ems="10"
-                    android:inputType="textMultiLine" />
+                    android:enabled="false"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/colorBack"
+                    android:textStyle="italic" />
             </LinearLayout>
 
         </LinearLayout>
@@ -175,7 +189,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="visible">
 
         <Button
             android:id="@+id/detas_send"

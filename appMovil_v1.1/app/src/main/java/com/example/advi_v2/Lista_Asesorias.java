@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 
 import org.json.JSONArray;
@@ -22,7 +23,7 @@ import java.net.URL;
 
 public class Lista_Asesorias extends AppCompatActivity {
     MainActivity maa;
-    private String getAllAsesoriasURL ="http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get_solicitante&solicitante=";
+    private String getAllAsesoriasURL ="http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get_solicitante&solicitante=";
     private ListView lista_asesorias;
     private ArrayAdapter adapter;
     private Spinner sp_as;
@@ -54,7 +55,7 @@ public class Lista_Asesorias extends AppCompatActivity {
                 String id_asesoria = datos_asesor[0];
                 Log.e("ASESOR",id_asesoria);
                 Intent i = new Intent(Lista_Asesorias.this,Detalle_Asesoria.class);
-                i.putExtra(ASESORIA,id_asesoria);
+                i.putExtra(solicitante,id_asesoria);
                 startActivity(i);
             }
         });

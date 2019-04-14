@@ -11,14 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Detalle_Valoracion"></activity>
-        <activity android:name=".Detalle_Peticion" />
-        <activity android:name=".Detalle_Asesoria" />
-        <activity android:name=".Lista_Valoraciones" />
-        <activity android:name=".Lista_Asesorias" />
-        <activity android:name=".Lista_Peticiones" />
-        <activity android:name=".Solicitar_Asesoria" />
-        <activity android:name=".Detalle_Asesor" />
+        <activity android:name=".Detalle_Valoracion" android:parentActivityName=".Lista_Valoraciones"></activity>
+        <activity android:name=".Detalle_Peticion" android:parentActivityName=".Lista_Peticiones"/>
+        <activity android:name=".Detalle_Asesoria" android:parentActivityName=".Lista_Asesorias"/>
+        <activity android:name=".Lista_Valoraciones" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Lista_Asesorias" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Lista_Peticiones" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Solicitar_Asesoria" android:parentActivityName=".Lista_Asesores"/>
+        <activity android:name=".Detalle_Asesor" android:parentActivityName=".Lista_Asesores"/>
         <activity
             android:name=".Lista_Asesores"
             android:parentActivityName=".MainActivity" />
