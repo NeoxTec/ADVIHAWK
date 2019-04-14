@@ -23,6 +23,9 @@ public class Detalle_Asesor extends AppCompatActivity {
     EditText et_correo;
     EditText et_validado;
     EditText et_habilidades;
+    EditText et_nombre;
+    EditText et_grado;
+    EditText et_carrera;
 
     private String weburl = "http://advihawk.herokuapp.com/api_asesor?user_hash=12345&action=get&id_as=";
 
@@ -36,6 +39,9 @@ public class Detalle_Asesor extends AppCompatActivity {
         et_correo = findViewById(R.id.correo_asesor);
         et_validado = findViewById(R.id.validado_asesor);
         et_habilidades = findViewById(R.id.habilidades_asesor);
+        et_carrera = findViewById(R.id.carrera_asesor);
+        et_grado = findViewById(R.id.grado_asesor);
+        et_nombre = findViewById(R.id.name_as);
         Button solicitar = (Button) findViewById(R.id.bt_solicitar_asesoria);
 
         solicitar.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +80,9 @@ public class Detalle_Asesor extends AppCompatActivity {
         String validado;
         String correo;
         String habilidades;
+        String grado;
+        String carrera;
+        String nombre;
         try{
             jsonArray = new JSONArray(jsonResult);
         }catch (JSONException e){
@@ -87,12 +96,18 @@ public class Detalle_Asesor extends AppCompatActivity {
                 correo = jsonObject.getString("correo");
                 validado = jsonObject.getString("validado");
                 habilidades = jsonObject.getString("habilidades");
+                nombre = jsonObject.getString("nombre");
+                grado = jsonObject.getString("grado");
+                carrera = jsonObject.getString("carrera");
 
                 //Se muestran los datos del cliente en su respectivo EditText
                 et_num_as.setText(num_as);
                 et_correo.setText(correo);
                 et_validado.setText(validado);
                 et_habilidades.setText(habilidades);
+                et_nombre.setText(nombre);
+                et_grado.setText(grado);
+                et_carrera.setText(carrera);
 
             }catch (JSONException e){
                 Log.e("Error parseo ",e.getMessage());
