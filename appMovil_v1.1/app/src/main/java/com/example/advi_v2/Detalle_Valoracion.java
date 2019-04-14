@@ -75,10 +75,10 @@ public class Detalle_Valoracion extends AppCompatActivity {
     private void parseInformation(String jsonResult) {
         JSONArray jsonArray = null;
         String estado;
-        String fecha;
         String hora;
+        String dia;
         String tema;
-        String solicitante;
+        String asesor;
         try {
             jsonArray = new JSONArray(jsonResult);
         } catch (JSONException e) {
@@ -89,17 +89,17 @@ public class Detalle_Valoracion extends AppCompatActivity {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 //Se obtiene cada uno de los datos cliente del webservice
                 estado = jsonObject.getString("estado");
-                fecha = jsonObject.getString("dia");
+                dia = jsonObject.getString("dia");
                 hora = jsonObject.getString("hora");
                 tema = jsonObject.getString("tema");
-                solicitante = jsonObject.getString("solicitante");//toma dato json y lo hace texto
+                asesor = jsonObject.getString("asesor");//toma dato json y lo hace texto
 
                 //Se muestran los datos del cliente en su respectivo EditText
                 et_estado.setText(estado);
-                et_dia.setText(fecha);
+                et_dia.setText(dia);
                 et_tema.setText(tema);
                 et_hora.setText(hora);
-                et_solicitante.setText(solicitante);
+                et_solicitante.setText(asesor);
             } catch (JSONException e) {
                 Log.e("Error parseo ", e.getMessage());
             }
