@@ -5,21 +5,23 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:paddingHorizontal="10dp"
     tools:context=".Solicitar_Asesoria">
 
     <TextView
+        android:paddingHorizontal="10dp"
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:paddingVertical="5dp"
+        android:background="@drawable/fondo2"
         android:fontFamily="sans-serif-black"
         android:text="Asesoria"
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_primary_dark"
+        android:textColor="@color/ic_launcher_background"
         android:textSize="38dp"
         android:textStyle="bold" />
     <LinearLayout
+        android:paddingHorizontal="20dp"
         android:layout_marginTop="32dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,6 +41,7 @@
             android:inputType="date" />
     </LinearLayout>
     <LinearLayout
+        android:paddingHorizontal="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingVertical="10dp"
@@ -57,42 +60,26 @@
             android:inputType="time" />
     </LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="10dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/background_dark"
             android:textSize="20dp"
-            android:text="Tema: "/>
+            android:text="Descripción: "/>
         <EditText
-            android:id="@+id/et_tema_solicitada"
+            android:id="@+id/et_solicitud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginHorizontal="10dp"
             android:inputType="text" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:paddingHorizontal="10dp"
-        android:layout_height="wrap_content"
-        android:paddingVertical="10dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/background_dark"
-            android:textSize="20dp"
-            android:text="Lugar: "/>
-        <EditText
-            android:id="@+id/et_lugar_solicitada"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textMultiLine" />
-    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

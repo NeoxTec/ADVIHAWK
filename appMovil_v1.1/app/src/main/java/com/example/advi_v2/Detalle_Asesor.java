@@ -27,6 +27,8 @@ public class Detalle_Asesor extends AppCompatActivity {
     EditText et_grado;
     EditText et_carrera;
 
+    public static final String Correo_asesro= "7";
+    private String email;
     private String weburl = "http://advihawk.herokuapp.com/api_asesor?user_hash=12345&action=get&id_as=";
 
     @Override
@@ -47,6 +49,7 @@ public class Detalle_Asesor extends AppCompatActivity {
         solicitar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Solicitar_Asesoria.class);
+                intent.putExtra(Correo_asesro,email);
                 startActivityForResult(intent,0);
             }
         });
@@ -108,6 +111,7 @@ public class Detalle_Asesor extends AppCompatActivity {
                 et_nombre.setText(nombre);
                 et_grado.setText(grado);
                 et_carrera.setText(carrera);
+                email = correo;
 
             }catch (JSONException e){
                 Log.e("Error parseo ",e.getMessage());

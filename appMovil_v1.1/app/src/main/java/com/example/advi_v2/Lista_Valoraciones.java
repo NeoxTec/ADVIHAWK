@@ -19,6 +19,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Lista_Valoraciones extends AppCompatActivity {
+    MainActivity maa;
     private String getAllValoracionURL ="http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get_asesor_estado&estado=finalizado&asesor=";
     private ListView lista_valoraciones;
     private ArrayAdapter adapter;
@@ -34,10 +35,7 @@ public class Lista_Valoraciones extends AppCompatActivity {
         adapter = new ArrayAdapter(this, R.layout.asesor_item);
         lista_valoraciones.setAdapter(adapter);
 
-        Intent in = getIntent();
-        asesor = in.getStringExtra(Acceso_Asesor.Correo_A);
-
-        getAllValoracionURL=getAllValoracionURL+asesor;
+        getAllValoracionURL=getAllValoracionURL+maa.mail_user;
         Log.e("URL",getAllValoracionURL);
         webREST(getAllValoracionURL);
     }

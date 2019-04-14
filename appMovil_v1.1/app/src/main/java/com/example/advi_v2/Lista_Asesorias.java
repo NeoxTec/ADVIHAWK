@@ -21,6 +21,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Lista_Asesorias extends AppCompatActivity {
+    MainActivity maa;
     private String getAllAsesoriasURL ="http://advi01.herokuapp.com/api_asesorias?user_hash=12345&action=get_solicitante&solicitante=";
     private ListView lista_asesorias;
     private ArrayAdapter adapter;
@@ -39,9 +40,8 @@ public class Lista_Asesorias extends AppCompatActivity {
         lista_asesorias.setAdapter(adapter);
         sp_as = findViewById(R.id.tipo_asesoria);
 
-        Intent in = getIntent();
-        solicitante = in.getStringExtra(Acceso_Asesor.Correo_A);
-
+        solicitante = maa.mail_user;
+        Log.e("solicitante",solicitante);
         getAllAsesoriasURL=getAllAsesoriasURL+solicitante;
         ObtenerURL();
 

@@ -17,6 +17,7 @@ public class Acceso_Asesor extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
         public static final String Correo_A = "3";
         private String asesor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +35,8 @@ public class Acceso_Asesor extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         View header = ((NavigationView)findViewById(R.id.nav_view)).getHeaderView(0);
         TextView correo = (TextView) header.findViewById(R.id.tv_nh_asesor);
-        Intent i = getIntent();
-        correo.setText(i.getStringExtra(MainActivity.Correo));
-        asesor = correo.getText().toString();
+
+        asesor = MainActivity.mail_user;
 
         TextView tipo = (TextView) header.findViewById(R.id.tv_nh_asesor_tipo);
         tipo.setText("Usuario Asesor");

@@ -25,6 +25,7 @@ public class Lista_Peticiones extends AppCompatActivity {
     private ListView lista_solicitudes;
     private ArrayAdapter adapter;
     private Spinner sp_as;
+    MainActivity maa;
     public static final String PEDIDO = "1";
     private String asesor;
 
@@ -40,11 +41,10 @@ public class Lista_Peticiones extends AppCompatActivity {
         sp_as = findViewById(R.id.tipo_asesoria);
 
         Intent in = getIntent();
-        asesor = in.getStringExtra(Acceso_Asesor.Correo_A);
 
-        getAllPedidosURL=getAllPedidosURL+"_asesor&asesor="+asesor;
+        getAllPedidosURL=getAllPedidosURL+"_asesor&asesor="+maa.mail_user;
         Log.e("URL",getAllPedidosURL);
-        webREST(getAllPedidosURL);
+        //webREST(getAllPedidosURL);
 
 
         lista_solicitudes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
