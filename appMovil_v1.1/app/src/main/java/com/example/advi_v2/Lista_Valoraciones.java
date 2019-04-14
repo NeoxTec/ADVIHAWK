@@ -24,7 +24,7 @@ import static com.example.advi_v2.Lista_Asesorias.ASESORIA;
 
 public class Lista_Valoraciones extends AppCompatActivity {
     MainActivity maa;
-    private String getAllValoracionURL ="http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get_asesor_estado&estado=finalizado&asesor=";
+    private String getAllValoracionURL ="http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get_asesor_estado&estado=calificado&asesor=";
     private ListView lista_valoraciones;
     private ArrayAdapter adapter;
     public static final String VALORACION = "1";

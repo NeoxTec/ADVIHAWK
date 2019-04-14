@@ -31,18 +31,28 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12sp"
                 android:orientation="horizontal"
-                android:paddingHorizontal="15dp"
-                android:paddingVertical="12dp">
+                android:paddingHorizontal="45dp">
 
-                <RatingBar
-                    android:id="@+id/ratb_das"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:numStars="5"
-                    android:rating="2"
-                    android:theme="@style/Rating" />
+                    android:text="Valoración:"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/value_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -91,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:editable="false"
                     android:ems="10"
-                    android:inputType="date"
+                    android:inputType="text"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp" />
             </LinearLayout>

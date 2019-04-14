@@ -26,10 +26,10 @@ public class Detalle_Valoracion extends AppCompatActivity {
     TextView et_tema;
     TextView et_estado;
     TextView et_solicitante;
-    RatingBar rb;
+    TextView value;
 
     private String websurl = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
-    private String webvalor = "http://advihawk.herokuapp.com/api_valoracion?user_hash=12345&action=get&num_as=";
+    private String webvalor = "http://advihawk.herokuapp.com/api_valoracion?user_hash=12345&action=get&asesoria=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class Detalle_Valoracion extends AppCompatActivity {
         et_hora = findViewById(R.id.v_hr_as);
         et_tema = findViewById(R.id.v_tema_as);
         et_solicitante = findViewById(R.id.solicitante);
-        rb = (RatingBar) findViewById(R.id.ratb_das);
+        value = findViewById(R.id.value_val);
 
         Intent intent = getIntent();
         String num_ase = intent.getStringExtra(Lista_Valoraciones.VALORACION);
@@ -78,7 +78,6 @@ public class Detalle_Valoracion extends AppCompatActivity {
         String hora;
         String dia;
         String tema;
-        String asesor;
         try {
             jsonArray = new JSONArray(jsonResult);
         } catch (JSONException e) {
@@ -92,14 +91,12 @@ public class Detalle_Valoracion extends AppCompatActivity {
                 dia = jsonObject.getString("dia");
                 hora = jsonObject.getString("hora");
                 tema = jsonObject.getString("tema");
-                asesor = jsonObject.getString("asesor");//toma dato json y lo hace texto
 
                 //Se muestran los datos del cliente en su respectivo EditText
                 et_estado.setText(estado);
                 et_dia.setText(dia);
                 et_tema.setText(tema);
                 et_hora.setText(hora);
-                et_solicitante.setText(asesor);
             } catch (JSONException e) {
                 Log.e("Error parseo ", e.getMessage());
             }
@@ -125,7 +122,6 @@ public class Detalle_Valoracion extends AppCompatActivity {
 
     private void parseInfo(String jsonResult) {
         JSONArray jsonArray = null;
-        float valor;
         String dato;
         try {
             jsonArray = new JSONArray(jsonResult);
@@ -136,10 +132,9 @@ public class Detalle_Valoracion extends AppCompatActivity {
             try {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 //Se obtiene cada uno de los datos cliente del webservice
-                dato = jsonObject.getString("estado");
-                valor = Float.parseFloat(dato);
+                dato = jsonObject.getString("valor");
                 //Se muestran los datos del cliente en su respectivo EditText
-                rb.setRating(valor);
+                value.setText(dato);
             } catch (JSONException e) {
                 Log.e("Error parseo ", e.getMessage());
             }
