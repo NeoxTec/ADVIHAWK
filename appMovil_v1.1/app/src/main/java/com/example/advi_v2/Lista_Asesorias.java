@@ -55,7 +55,7 @@ public class Lista_Asesorias extends AppCompatActivity {
                 String id_asesoria = datos_asesor[0];
                 Log.e("ASESOR",id_asesoria);
                 Intent i = new Intent(Lista_Asesorias.this,Detalle_Asesoria.class);
-                i.putExtra(solicitante,id_asesoria);
+                i.putExtra(ASESORIA,id_asesoria);
                 startActivity(i);
             }
         });

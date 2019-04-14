@@ -30,6 +30,7 @@ public class Detalle_Asesoria extends AppCompatActivity {
     EditText et_asesor;
     RatingBar ll_rating;
     Button bt;
+    String num_ase;
 
     private String webservice_url = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
     private String consulta_asesor = "http://advihawk.herokuapp.com/api_asesores?user_hash=12345&action=get&id_as=";
@@ -61,7 +62,7 @@ public class Detalle_Asesoria extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        String num_ase = intent.getStringExtra(Lista_Asesorias.ASESORIA);
+        num_ase = intent.getStringExtra(Lista_Asesorias.ASESORIA);
         webservice_url+=num_ase;
         webServiceRest(webservice_url);
     }
@@ -111,7 +112,6 @@ public class Detalle_Asesoria extends AppCompatActivity {
                 et_tema.setText(tema);
                 et_hora.setText(hora);
                 et_asesor.setText(asesor);
-                detalle();
                 consulta_asesor+=asesor;//actualiza url para tener correo de asesor
                 webRest_AS(consulta_asesor);//invoca conslta
 
@@ -160,6 +160,12 @@ public class Detalle_Asesoria extends AppCompatActivity {
             }
         }
     }
-    private void detalle() {
+    public void detalle(View view) {
+        String valorar = "http://advihawk.herokuapp.com/api_valoracion?user_hash=12345&action=put&num_as=";//valor
+        StringBuilder sb = new StringBuilder();
+        sb.append(valorar);
+        sb.append(num_ase);
+        sb.append("&valor="+ll_rating.getRating());
+        Log.e("Valor",sb.toString());
     }
 }
