@@ -28,7 +28,6 @@ public class Lista_Valoraciones extends AppCompatActivity {
     private ListView lista_valoraciones;
     private ArrayAdapter adapter;
     public static final String VALORACION = "1";
-    private String asesor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

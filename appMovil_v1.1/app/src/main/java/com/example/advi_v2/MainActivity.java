@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     public static String mail_user;
     public int tipo_user;
     Button bt_ins, bt_reg;
-    ArrayList lista;
     public static final String Correo = "1";
     public static final String Tipo="2";
 
