@@ -33,8 +33,6 @@ public class Detalle_Peticion extends AppCompatActivity {
         setContentView(R.layout.activity_detalle__peticion);
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
 
-        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
-
         et_estado = findViewById(R.id.edo_asesoria);
         et_fecha = findViewById(R.id.fecha_asesoria);
         et_hora = findViewById(R.id.hr_asesoria);

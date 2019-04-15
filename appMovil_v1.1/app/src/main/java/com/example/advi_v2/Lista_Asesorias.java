@@ -97,8 +97,8 @@ public class Lista_Asesorias extends AppCompatActivity {
                 Log.e("ITEM", lista_asesorias.getItemAtPosition(position).toString());
                 String datos_asesor[] =
                         lista_asesorias.getItemAtPosition(position).toString().split(":");
-                String id_asesoria = datos_asesor[0];
-                Log.e("ASESOR",id_asesoria);
+                ASESORIA = datos_asesor[0];
+                Log.e("ASESOR",ASESORIA);
                 startActivity(i);
             }
         });

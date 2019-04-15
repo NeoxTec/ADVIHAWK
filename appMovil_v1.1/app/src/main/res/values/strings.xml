@@ -35,6 +35,14 @@
         <item>10</item>
         <item>11</item>
     </string-array>
+    <string-array name="calificar">
+        <item>0</item>
+        <item>1</item>
+        <item>3</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
     <string-array name="tipo_asesorias">
         <item>Pendientes</item>
         <item>Aceptadas</item>

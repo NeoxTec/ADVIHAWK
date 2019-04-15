@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -24,33 +25,22 @@ import java.net.URL;
 import java.sql.Time;
 
 public class Detalle_Asesoria extends AppCompatActivity {
-    EditText et_fecha;
-    EditText et_hora;
-    EditText et_tema;
-    EditText et_estado;
-    EditText et_asesor;
-    RatingBar ll_rating;
-    Button bt;
-    String num_ase;
-    Spinner spin;
+    TextView t_asesor,t_estado,t_fecha,t_hora,t_desc;
+    private String webservice_url = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as="+Lista_Asesorias.ASESORIA;
 
-    private String webservice_url = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
-    private String consulta_asesor = "http://advihawk.herokuapp.com/api_asesores?user_hash=12345&action=get&id_as=";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle__asesoria);
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
 
-        et_estado = findViewById(R.id.edo_asesoria);
-        et_fecha = findViewById(R.id.fecha_asesoria);
-        et_hora = findViewById(R.id.hr_asesoria);
-        et_tema = findViewById(R.id.tema_asesoria);
-        et_asesor = findViewById(R.id.asesor_asesoria);
-        spin = (Spinner) findViewById(R.id.valor_asesoria);
-        bt = (Button) findViewById(R.id.detas_send);
-        Intent intent = getIntent();
-        num_ase = intent.getStringExtra(Lista_Asesorias.ASESORIA);
-        webservice_url+=num_ase;
+        t_asesor = findViewById(R.id.da_ase);
+        t_estado = findViewById(R.id.da_edo);
+        t_desc = findViewById(R.id.da_desc);
+        t_hora = findViewById(R.id.da_time);
+        t_fecha = findViewById(R.id.da_time);
+
+        Log.e("URL=", webservice_url);
         webServiceRest(webservice_url);
     }
 
@@ -94,65 +84,15 @@ public class Detalle_Asesoria extends AppCompatActivity {
                 asesor = jsonObject.getString("asesor");//toma dato json y lo hace texto
 
                 //Se muestran los datos del cliente en su respectivo EditText
-                et_estado.setText(estado);
-                et_fecha.setText(fecha);
-                et_tema.setText(tema);
-                et_hora.setText(hora);
-                et_asesor.setText(asesor);
-                consulta_asesor+=asesor;//actualiza url para tener correo de asesor
-                webRest_AS(consulta_asesor);//invoca conslta
-
+                t_estado.setText(estado);
+                t_fecha.setText(fecha);
+                t_desc.setText(tema);
+                t_hora.setText(hora);
+                t_asesor.setText(asesor);
             }catch (JSONException e){
                 Log.e("Error parseo ",e.getMessage());
             }
         }
     }
-    //toma datos json
-    private void webRest_AS(String requestURL){
-        try{
-            URL url = new URL(requestURL);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String line = "";
-            String webSResult="";
-            while ((line = bufferedReader.readLine()) != null){
-                webSResult += line;
-            }
-            bufferedReader.close();
-            parIn(webSResult);
-        }catch(Exception e){
-            Log.e("Error 110 dato asesor",e.getMessage());
-        }
-    }
-
-    private void parIn(String jsonResult){
-        JSONArray jsonArray = null;
-        String correo;
-        try{
-            jsonArray = new JSONArray(jsonResult);
-        }catch (JSONException e){
-            Log.e("Error 111 dato asesor",e.getMessage());
-        }
-        for(int i=0;i<jsonArray.length();i++){
-            try{
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                //Se obtiene cada uno de los datos cliente del webservice
-                correo = jsonObject.getString("correo");
-
-                //Se muestran los datos del cliente en su respectivo EditText
-                et_asesor.setText(correo);
-
-            }catch (JSONException e){
-                Log.e("Error parseo asesor",e.getMessage());
-            }
-        }
-    }
-    public void detalle(View view) {
-        String valorar = "http://advihawk.herokuapp.com/api_valoracion?user_hash=12345&action=put&num_as=";//valor
-        StringBuilder sb = new StringBuilder();
-        sb.append(valorar);
-        sb.append(num_ase);
-        sb.append("&valor="+ll_rating.getRating());
-        Log.e("Valor",sb.toString());
-    }
+    // "http://advihawk.herokuapp.com/api_valoracion?user_hash=12345&action=put&num_as=";//valor
 }
