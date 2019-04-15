@@ -61,6 +61,8 @@ public class Registro extends AppCompatActivity {
         sb.append("&user="+campoCorreo.getText());
         webPut(sb.toString());
         Log.e("Consulta: ",sb.toString());
+        Intent i = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(i);
     }
 
     private void webPut(String requestURL){
@@ -134,5 +136,6 @@ public class Registro extends AppCompatActivity {
         toast2.show();
         Intent intent = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }

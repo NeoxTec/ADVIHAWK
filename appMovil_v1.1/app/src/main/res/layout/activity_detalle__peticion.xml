@@ -163,37 +163,32 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/LinLay_pet"
+    <Button
+        android:id="@+id/bt_ace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingHorizontal="15dp"
-        android:layout_marginTop="12dp">
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginBottom="10sp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed-light"
+        android:onClick="aceptar"
+        android:paddingVertical="15sp"
+        android:text="Aceptar"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="19sp"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/bt_ace"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="Aceptar"
-            android:textColor="@color/ic_launcher_background"
-            android:textSize="19sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/bt_can"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorAccent"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="Rechazar"
-            android:textColor="@color/ic_launcher_background"
-            android:textSize="19sp"
-            android:textStyle="bold" />
-        </LinearLayout>
-
+    <Button
+        android:id="@+id/bt_can"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15sp"
+        android:background="@color/colorAccent"
+        android:fontFamily="sans-serif-condensed-light"
+        android:onClick="rechazar"
+        android:paddingVertical="15sp"
+        android:text="Rechazar"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="19sp"
+        android:textStyle="bold" />
 </LinearLayout>

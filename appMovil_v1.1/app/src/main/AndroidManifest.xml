@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Detalle_Peticion_Aceptada"></activity>
+        <activity android:name=".Detalle_Peticion_Aceptada" android:parentActivityName=".Lista_Peticiones"></activity>
         <activity
             android:name=".Detalle_Valoracion"
             android:parentActivityName=".Lista_Valoraciones" />
