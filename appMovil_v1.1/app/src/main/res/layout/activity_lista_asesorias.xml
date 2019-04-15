@@ -30,12 +30,12 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="17sp"
             android:text="Tipo:"
-            android:textSize="20sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
         <Spinner
             android:id="@+id/tipo_asesoria"
             android:layout_width="wrap_content"
-            android:paddingHorizontal="30sp"
+            android:paddingHorizontal="10sp"
             android:layout_height="match_parent"
             android:layout_marginLeft="1dp"
             android:background="@drawable/fondo3"
