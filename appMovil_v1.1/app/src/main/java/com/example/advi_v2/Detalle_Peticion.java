@@ -119,8 +119,6 @@ public class Detalle_Peticion extends AppCompatActivity {
         Log.e("ENVIO",URL);
         Toast te = Toast.makeText(getApplicationContext(),"Solicitud Aceptada",Toast.LENGTH_SHORT);
         te.show();
-        Intent i = new Intent(getApplicationContext(),Lista_Peticiones.class);
-        startActivity(i);
         finish();
     }
 
@@ -130,8 +128,6 @@ public class Detalle_Peticion extends AppCompatActivity {
         enviar(URL1);
         Toast to = Toast.makeText(getApplicationContext(),"Asesoria Cancelada",Toast.LENGTH_SHORT);
         to.show();
-        Intent intent = new Intent(getApplicationContext(),Lista_Peticiones.class);
-        startActivity(intent);
         finish();
     }
 

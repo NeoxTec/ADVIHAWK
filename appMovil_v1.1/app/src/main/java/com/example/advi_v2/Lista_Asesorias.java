@@ -23,12 +23,16 @@ import java.net.URL;
 
 public class Lista_Asesorias extends AppCompatActivity {
     MainActivity maa;
-    private String getAllAsesoriasURL ="http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get_solicitante&solicitante=";
+    private String getAse_peURL ="http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get_solicitante_estado&estado=pendiente&solicitante="+MainActivity.mail_user;
+    private String getAse_acURL ="http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get_solicitante_estado&estado=aceptado&solicitante="+MainActivity.mail_user;
+    private String getAse_reURL ="http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get_solicitante_estado&estado=rechazado&solicitante="+MainActivity.mail_user;
+    private String getAse_fiURL ="http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get_solicitante_estado&estado=finalizado&solicitante="+MainActivity.mail_user;
+    private String getAse_caURL ="http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get_solicitante_estado&estado=calificado&solicitante="+MainActivity.mail_user;
     private ListView lista_asesorias;
     private ArrayAdapter adapter;
     private Spinner sp_as;
-    private String solicitante;
-    public static final String ASESORIA = "1";
+    public static String ASESORIA;
+    private Intent i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +42,11 @@ public class Lista_Asesorias extends AppCompatActivity {
 
         lista_asesorias = findViewById(R.id.lista_solicitudes);
         adapter = new ArrayAdapter(this, R.layout.asesor_item);
-        lista_asesorias.setAdapter(adapter);
         sp_as = findViewById(R.id.tipo_asesoria);
 
-        solicitante = maa.mail_user;
-        Log.e("solicitante",solicitante);
-        getAllAsesoriasURL=getAllAsesoriasURL+solicitante;
-        ObtenerURL();
+        lista_asesorias.setAdapter(adapter);
+        Log.e("solicitante",getAse_peURL);
+        webREST(getAse_peURL);
 
         lista_asesorias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -54,8 +56,6 @@ public class Lista_Asesorias extends AppCompatActivity {
                         lista_asesorias.getItemAtPosition(position).toString().split(":");
                 String id_asesoria = datos_asesor[0];
                 Log.e("ASESOR",id_asesoria);
-                Intent i = new Intent(Lista_Asesorias.this,Detalle_Asesoria.class);
-                i.putExtra(ASESORIA,id_asesoria);
                 startActivity(i);
             }
         });
@@ -100,17 +100,43 @@ public class Lista_Asesorias extends AppCompatActivity {
             }
         }
     }
-    private void ObtenerURL(){
-        String res = sp_as.getSelectedItem().toString();
-        if (res != "Todo")
-            getAllAsesoriasURL=getAllAsesoriasURL+"&tipo="+sp_as.getSelectedItem().toString();
-        webREST(getAllAsesoriasURL);
-    }
 
     public void consultar(View view) {
-        adapter= null;
-        lista_asesorias.setAdapter(adapter);
-        ObtenerURL();
-        lista_asesorias.setAdapter(adapter);
+        String dato = sp_as.getSelectedItem().toString();
+        if(dato == "Pendientes"){
+            adapter=null;
+            adapter = new ArrayAdapter(getApplicationContext(), R.layout.asesor_item);
+            lista_asesorias.setAdapter(adapter);
+            webREST(getAse_peURL);
+            i = new Intent(Lista_Asesorias.this, Detalle_Asesoria.class);
+        }
+        else if(dato == "Aceptados"){
+            adapter=null;
+            adapter = new ArrayAdapter(getApplicationContext(), R.layout.asesor_item);
+            lista_asesorias.setAdapter(adapter);
+            webREST(getAse_acURL);
+            i = new Intent(Lista_Asesorias.this, Detalle_Asesoria.class);
+        }
+        else if(dato == "Rechazados"){
+            adapter=null;
+            adapter = new ArrayAdapter(getApplicationContext(), R.layout.asesor_item);
+            lista_asesorias.setAdapter(adapter);
+            webREST(getAse_reURL);
+            i = new Intent(Lista_Asesorias.this, Detalle_Asesoria.class);
+        }
+        else if(dato == "Finalizados"){
+            adapter=null;
+            adapter = new ArrayAdapter(getApplicationContext(), R.layout.asesor_item);
+            lista_asesorias.setAdapter(adapter);
+            webREST(getAse_fiURL);
+            i = new Intent(Lista_Asesorias.this, Detalle_Asesoria_Fin.class);
+        }
+        else if(dato == "Calificados"){
+            adapter=null;
+            adapter = new ArrayAdapter(getApplicationContext(), R.layout.asesor_item);
+            lista_asesorias.setAdapter(adapter);
+            webREST(getAse_caURL);
+            i = new Intent(Lista_Asesorias.this, Detalle_Asesoria_Cal.class);
+        }
     }
 }

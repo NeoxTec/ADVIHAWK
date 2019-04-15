@@ -36,12 +36,11 @@
         <item>11</item>
     </string-array>
     <string-array name="tipo_asesorias">
-        <item>Todo</item>
-        <item>Pendiente</item>
-        <item>Aceptado</item>
-        <item>Rechazado</item>
-        <item>Finalizado</item>
-        <item>Calificado</item>
+        <item>Pendientes</item>
+        <item>Aceptadas</item>
+        <item>Rechazadas</item>
+        <item>Finalizadas</item>
+        <item>Calificadas</item>
     </string-array>
     <string-array name="tipo_pedido">
         <item>Todo</item>

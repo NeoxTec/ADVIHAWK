@@ -103,8 +103,7 @@ public class Solicitar_Asesoria extends AppCompatActivity implements View.OnClic
         }catch(Exception e){
             Toast t = Toast.makeText(getApplicationContext(),"Asesoria enviada",Toast.LENGTH_LONG);
             t.show();
-            Intent i = new Intent(getApplicationContext(),Lista_Asesores.class);
-            startActivity(i);
+            finish();
             Log.e("Error 100",e.getMessage());
         }
     }

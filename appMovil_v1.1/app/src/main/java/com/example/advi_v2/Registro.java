@@ -63,6 +63,7 @@ public class Registro extends AppCompatActivity {
         Log.e("Consulta: ",sb.toString());
         Intent i = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(i);
+        finish();
     }
 
     private void webPut(String requestURL){
