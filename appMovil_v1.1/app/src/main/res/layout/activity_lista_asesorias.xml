@@ -21,7 +21,7 @@
         android:textStyle="bold" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="wrap_content"
         android:paddingVertical="10dp"
         android:orientation="horizontal">
 
@@ -32,27 +32,18 @@
             android:text="Tipo:"
             android:textSize="12sp"
             android:textStyle="bold" />
+
         <Spinner
             android:id="@+id/tipo_asesoria"
-            android:layout_width="wrap_content"
-            android:paddingHorizontal="10sp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
             android:background="@drawable/fondo3"
-            android:ems="19"
-            android:entries="@array/tipo_asesorias" />
+            android:ems="10"
+            android:entries="@array/tipo_asesorias"
+            android:paddingHorizontal="8sp"
+            android:paddingVertical="8sp" />
 
-        <Button
-            android:id="@+id/bt_dases"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="24sp"
-            android:background="@color/colorPrimary"
-            android:onClick="consultar"
-            android:paddingHorizontal="12dp"
-            android:text="Consultar"
-            android:textAlignment="textStart"
-            android:textStyle="bold" />
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
