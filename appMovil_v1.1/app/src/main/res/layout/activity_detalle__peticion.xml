@@ -47,13 +47,15 @@
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/solicitante"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginHorizontal="5dp"
                     android:ems="10"
-                    android:inputType="text" />
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:inputType="textMultiLine" />
             </LinearLayout>
 
             <LinearLayout
@@ -70,11 +72,13 @@
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
                     android:id="@+id/edo_asesoria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="20sp"
                     android:inputType="text" />
             </LinearLayout>
 
@@ -93,11 +97,13 @@
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
+                    android:textSize="20sp"
                     android:id="@+id/fecha_asesoria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:textColor="@color/colorPrimaryDark"
                     android:inputType="date" />
             </LinearLayout>
 
@@ -116,12 +122,14 @@
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
+                    android:textSize="20sp"
                     android:id="@+id/hr_asesoria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:ems="10"
+                    android:textColor="@color/colorPrimaryDark"
                     android:inputType="time" />
             </LinearLayout>
 
@@ -141,12 +149,14 @@
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
-                <EditText
+                <TextView
+                    android:textSize="20sp"
                     android:id="@+id/tema_asesoria"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:ems="10"
+                    android:textColor="@color/colorPrimaryDark"
                     android:inputType="textMultiLine" />
             </LinearLayout>
 
@@ -186,36 +196,4 @@
             android:textStyle="bold" />
         </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/LinLay_ace"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingHorizontal="15dp"
-        android:paddingTop="5dp">
-
-        <Button
-            android:id="@+id/bt_fin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:fontFamily="sans-serif-condensed-light"
-            android:text="Finalizar"
-            android:textColor="@color/ic_launcher_background"
-            android:textSize="19sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/bt_rec"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorAccent"
-            android:fontFamily="sans-serif-black"
-            android:text="Rechazar"
-            android:textColor="@color/ic_launcher_background"
-            android:textSize="19sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 </LinearLayout>

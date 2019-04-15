@@ -28,6 +28,7 @@ public class Lista_Peticiones extends AppCompatActivity {
     private ListView lista_solicitudes;
     private ArrayAdapter adapter;
     RadioGroup rg;
+    Intent i;
     public static String Det_ped;
 
     @Override
@@ -40,6 +41,8 @@ public class Lista_Peticiones extends AppCompatActivity {
         adapter = new ArrayAdapter(this, R.layout.asesor_item);
         lista_solicitudes.setAdapter(adapter);
         rg= (RadioGroup) findViewById(R.id.peticiones_tipo);
+        i = new Intent(Lista_Peticiones.this, Detalle_Peticion.class);
+
 
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -50,12 +53,14 @@ public class Lista_Peticiones extends AppCompatActivity {
                         adapter = new ArrayAdapter(getApplicationContext(), R.layout.asesor_item);
                         lista_solicitudes.setAdapter(adapter);
                         webREST(getAceptadosPenURL);
+                        i = new Intent(Lista_Peticiones.this, Detalle_Peticion_Aceptada.class);
                         break;
                     case R.id.rb_pendientes:
                         adapter = null;
                         adapter = new ArrayAdapter(getApplicationContext(), R.layout.asesor_item);
                         lista_solicitudes.setAdapter(adapter);
                         webREST(getPedidosPenURL);
+                        i = new Intent(Lista_Peticiones.this, Detalle_Peticion.class);
                         break;
                 }
             }
@@ -73,7 +78,6 @@ public class Lista_Peticiones extends AppCompatActivity {
                 String id_ped = datos_pedido[0];
                 Log.e("PEDIDO", id_ped);
                 Det_ped = id_ped;
-                Intent i = new Intent(Lista_Peticiones.this, Detalle_Peticion.class);
                 startActivity(i);
             }
         });

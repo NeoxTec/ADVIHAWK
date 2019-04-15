@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,14 +21,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Detalle_Peticion extends AppCompatActivity {
-    EditText et_fecha;
-    EditText et_hora;
-    EditText et_tema;
-    EditText et_estado;
-    EditText et_solicitante;
-    LinearLayout ll_pet,ll_ce;
+    TextView et_fecha, et_hora, et_tema,et_estado, et_solicitante;
+    Button ace,rec;
 
-    private String tipo;
     private String websurl = "http://advihawk.herokuapp.com/api_asesorias?user_hash=12345&action=get&num_as=";
 
     @Override
@@ -40,23 +37,12 @@ public class Detalle_Peticion extends AppCompatActivity {
         et_hora = findViewById(R.id.hr_asesoria);
         et_tema = findViewById(R.id.tema_asesoria);
         et_solicitante = findViewById(R.id.solicitante);
-        ll_ce =(LinearLayout) findViewById(R.id.LinLay_pet);
-        ll_pet =(LinearLayout) findViewById(R.id.LinLay_ace);
+        ace =findViewById(R.id.bt_ace);
+        rec = findViewById(R.id.bt_can);
 
-        Intent intent = getIntent();
-        String num_ase = intent.getStringExtra(Lista_Asesorias.ASESORIA);
-        websurl+=num_ase;
+        websurl+=Lista_Peticiones.Det_ped;
+        Log.e("URL_PEDIDO",websurl);
         webServiceRest(websurl);
-
-         tipo = et_estado.getText().toString();
-
-         if (tipo== "Pendiente"){
-             ll_ce.setVisibility(View.GONE);
-             ll_pet.setVisibility(View.VISIBLE);
-         }else if (tipo=="Aceptado"){
-             ll_pet.setVisibility(View.GONE);
-             ll_ce.setVisibility(View.VISIBLE);
-         }
     }
 
         private void webServiceRest(String requestURL){
@@ -93,9 +79,9 @@ public class Detalle_Peticion extends AppCompatActivity {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
                     //Se obtiene cada uno de los datos cliente del webservice
                     estado = jsonObject.getString("estado");
-                    fecha = jsonObject.getString("fecha");
+                    fecha = jsonObject.getString("dia");
                     hora = jsonObject.getString("hora");
-                    tema = jsonObject.getString("dia");
+                    tema = jsonObject.getString("tema");
                     solicitante = jsonObject.getString("solicitante");//toma dato json y lo hace texto
 
                     //Se muestran los datos del cliente en su respectivo EditText
