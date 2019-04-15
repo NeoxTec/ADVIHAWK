@@ -26,6 +26,7 @@ public class Registro extends AppCompatActivity {
     private RadioGroup campoTipo;
     private Toast toast2;
     private String registro_url = "http://advihawk.herokuapp.com/api_users?user_hash=12345&action=put";
+    private String asesor_r = "http://advihawk.herokuapp.com/api_asesor?user_hash=12345&action=put";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,15 @@ public class Registro extends AppCompatActivity {
         sb.append("&grado="+grado);
         sb.append("&user="+campoCorreo.getText());
         webPut(sb.toString());
+        if (dato=0){
+            StringBuilder sbu = new StringBuilder(); 
+            sbu.apppend(asesor_r+"&correo="+campoCorreo.getText());
+            sbu.apppend("&nombre="+campoNombre.getText()+" "+campoApe.getText());
+            sbu.apppend("&carrera="+carrera);
+            sbu.apppend("&grado="+grado);
+            Log.e("URL envio= ",sbu.toString());
+            webPt(sbu.toString());
+        }
         Log.e("Consulta: ",sb.toString());
         Toast to = Toast.makeText(getApplicationContext(),"Registro realizado, ingrese correo en aplicacion",Toast.LENGTH_SHORT);
         to.show();
@@ -85,6 +95,25 @@ public class Registro extends AppCompatActivity {
             Log.e("Error 100",e.getMessage());
         }
     }
+    
+    private void webPt(String requestURL){
+        try{
+            URL url = new URL(requestURL);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String line = "";
+            String webServiceResult="";
+            while ((line = bufferedReader.readLine()) != null){
+                webServiceResult += line;
+                Log.e("Resultado=",webServiceResult);
+            }
+            bufferedReader.close();
+            parseInn(webServiceResult);
+        }catch(Exception e){
+            Log.e("Error 200 url asesor",e.getMessage());
+        }
+    }
+    
     private void parseInformation(String jsonResult){
         JSONArray jsonArray = null;
         String description;
@@ -101,6 +130,26 @@ public class Registro extends AppCompatActivity {
                 Log.e("DESCRIPTION",description);
             }catch (JSONException e){
                 Log.e("Error 102",e.getMessage());
+            }
+        }
+    }
+    
+    private void parseInn(String jsonResult){
+        JSONArray jsonArray = null;
+        String description;
+        try{
+            jsonArray = new JSONArray(jsonResult);
+        }catch (JSONException e){
+            Log.e("Error 101",e.getMessage());
+        }
+        for(int i=0;i<jsonArray.length();i++){
+            try{
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                description = jsonObject.getString("description");
+                Log.e("DESCRIPTION",description);
+            }catch (JSONException e){
+                Log.e("Error 217 Error Parseo Asesor",e.getMessage());
             }
         }
     }
