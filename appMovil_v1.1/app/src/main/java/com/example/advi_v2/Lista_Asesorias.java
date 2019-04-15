@@ -75,13 +75,13 @@ public class Lista_Asesorias extends AppCompatActivity {
                     adapter = new ArrayAdapter(getApplicationContext(), R.layout.asesor_item);
                     lista_asesorias.setAdapter(adapter);
                     webREST(getAse_fiURL);
-                    i = new Intent(Lista_Asesorias.this,Detalle_Asesoria_Fin.class);
+                    i = new Intent(Lista_Asesorias.this,Detalle_Asesoria_Cal.class);
                 }else{
                     adapter =null;
                     adapter = new ArrayAdapter(getApplicationContext(), R.layout.asesor_item);
                     lista_asesorias.setAdapter(adapter);
                     webREST(getAse_caURL);
-                    i = new Intent(Lista_Asesorias.this,Detalle_Asesoria_Cal.class);
+                    i = new Intent(Lista_Asesorias.this,Detalle_Asesoria_Fin.class);
                 }
             }
 
