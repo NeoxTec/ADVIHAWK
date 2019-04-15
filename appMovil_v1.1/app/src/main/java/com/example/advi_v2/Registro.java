@@ -61,6 +61,8 @@ public class Registro extends AppCompatActivity {
         sb.append("&user="+campoCorreo.getText());
         webPut(sb.toString());
         Log.e("Consulta: ",sb.toString());
+        Toast to = Toast.makeText(getApplicationContext(),"Registro realizado, ingrese correo en aplicacion",Toast.LENGTH_SHORT);
+        to.show();
         Intent i = new Intent(getApplicationContext(),MainActivity.class);
         startActivity(i);
         finish();

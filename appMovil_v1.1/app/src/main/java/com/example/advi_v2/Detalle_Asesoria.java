@@ -38,7 +38,7 @@ public class Detalle_Asesoria extends AppCompatActivity {
         t_estado = findViewById(R.id.da_edo);
         t_desc = findViewById(R.id.da_desc);
         t_hora = findViewById(R.id.da_time);
-        t_fecha = findViewById(R.id.da_time);
+        t_fecha = findViewById(R.id.da_date);
 
         Log.e("URL=", webservice_url);
         webServiceRest(webservice_url);

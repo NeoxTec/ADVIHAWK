@@ -46,15 +46,15 @@
                     android:textStyle="bold" />
 
                 <Spinner
-                    android:id="@+id/valor_asesoria"
-                    android:entries="@array/calificar"
+                    android:id="@+id/dac_sp_val"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:ems="10"
                     android:enabled="false"
+                    android:entries="@array/calificar"
                     android:inputType="text"
-                    android:textSize="22sp"
                     android:textColor="@color/colorBack"
+                    android:textSize="22sp"
                     android:textStyle="italic" />
             </LinearLayout>
 
@@ -73,15 +73,15 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/asesor_asesoria"
+                    android:id="@+id/dac_as"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="12sp"
-                    android:paddingVertical="6sp"
                     android:layout_marginHorizontal="25dp"
+                    android:layout_marginBottom="12sp"
                     android:ems="10"
                     android:enabled="false"
                     android:inputType="text"
+                    android:paddingVertical="6sp"
                     android:textColor="@color/colorBack" />
             </LinearLayout>
 
@@ -100,15 +100,15 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/edo_asesoria"
+                    android:id="@+id/dac_edo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="6sp"
                     android:ems="10"
                     android:enabled="false"
                     android:inputType="text"
-                    android:textSize="20sp"
-                    android:layout_marginVertical="6sp"
                     android:textColor="@color/colorBack"
+                    android:textSize="20sp"
                     android:textStyle="italic" />
             </LinearLayout>
 
@@ -128,15 +128,15 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/fecha_asesoria"
+                    android:id="@+id/dac_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:textSize="18sp"
-                    android:paddingVertical="12sp"
                     android:enabled="false"
                     android:inputType="text"
+                    android:paddingVertical="12sp"
                     android:textColor="@color/colorBack"
+                    android:textSize="18sp"
                     android:textStyle="italic" />
             </LinearLayout>
 
@@ -156,16 +156,16 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:textSize="18sp"
-                    android:paddingVertical="12sp"
-                    android:id="@+id/hr_asesoria"
+                    android:id="@+id/dac_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:ems="10"
                     android:enabled="false"
                     android:inputType="text"
+                    android:paddingVertical="12sp"
                     android:textColor="@color/colorBack"
+                    android:textSize="18sp"
                     android:textStyle="italic" />
             </LinearLayout>
 
@@ -186,16 +186,16 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:textSize="18sp"
-                    android:paddingVertical="12sp"
-                    android:id="@+id/tema_asesoria"
+                    android:id="@+id/dac_desc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:ems="10"
                     android:enabled="false"
                     android:inputType="textMultiLine"
+                    android:paddingVertical="12sp"
                     android:textColor="@color/colorBack"
+                    android:textSize="18sp"
                     android:textStyle="italic" />
             </LinearLayout>
 
